@@ -1,0 +1,9 @@
+﻿:root {
+    --primary-color: #1a1a1a;
+    --accent-color: #c4a661;
+    --text-color: #ffffff;
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Roboto", sans-serif;
+}
+
+/* Rest of the CSS content */
