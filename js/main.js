@@ -356,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     pianoKeys.forEach((key, index) => {
         const note = notes[index];
-        const audio = new Audio(`assets/audio/piano-${note}.mp3`);
+        const audio = new Audio(`https://awiclass.monoame.com/pianosound/${note}.mp3`);
         
         key.addEventListener("mouseenter", () => {
             audio.currentTime = 0;
