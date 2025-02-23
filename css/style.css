@@ -1,4 +1,3 @@
-/* Complete CSS content */
 :root {
     --primary-color: #1a1a1a;
     --accent-color: #c4a661;
@@ -9,4 +8,71 @@
     --font-body: "Montserrat", sans-serif;
 }
 
-/* Rest of the CSS content */
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Piano Navigation */
+.piano-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+}
+
+.white-key, .black-key {
+    position: relative;
+    height: 100%;
+}
+
+.white-key {
+    width: 100px;
+    background: var(--piano-white);
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.black-key {
+    width: 60px;
+    background: var(--piano-black);
+    margin: 0 -30px;
+    z-index: 1;
+    height: 60%;
+}
+
+.white-key a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--piano-black);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    position: relative;
+    background: url("https://images.unsplash.com/photo-1552422535-c45813c61732") center/cover;
+}
+
+/* Add all the other styles we had before */
