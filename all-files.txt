@@ -1,0 +1,45 @@
+﻿<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melanie Wainwright - Jazz Piano & Vocal Coach Berlin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Full index.html content -->
+</body>
+</html>
+
+/* style.css */
+:root {
+    --primary-color: #1a1a1a;
+    --accent-color: #c4a661;
+    --piano-white: #f5f5f5;
+    --piano-black: #333;
+    --text-color: #ffffff;
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Montserrat", sans-serif;
+}
+/* Full CSS content */
+
+// main.js
+document.addEventListener("DOMContentLoaded", () => {
+    // Full JavaScript content
+});
+
+<!-- services.html -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Full services.html content -->
+</html>
+
+<!-- booking.html -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Full booking.html content -->
+</html>
