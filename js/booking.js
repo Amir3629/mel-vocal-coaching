@@ -1,0 +1,3 @@
+﻿document.addEventListener('DOMContentLoaded', () => {
+... (full booking.js content) ...
+});
