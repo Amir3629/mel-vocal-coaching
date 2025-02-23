@@ -3,130 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melanie Wainwright - Jazz Vocal Coach Berlin</title>
+    <title>Melanie Wainwright - Jazz Piano & Vocal Coach Berlin</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Melanie Wainwright</h1>
-            <p class="subtitle">Jazz Vocal Coach in Berlin</p>
-            <a href="#contact" class="cta-button">Book a Trial Lesson</a>
-        </div>
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="https://player.vimeo.com/external/368320203.hd.mp4?s=ed62dd31538d7ef092250598fdb13c3cd0857812&profile_id=175&oauth2_token_id=57447761" type="video/mp4">
-        </video>
-        <audio id="background-music" loop>
-            <source src="assets/audio/jazz-background.mp3" type="audio/mp3">
-        </audio>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="main-nav">
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <!-- Piano Navigation -->
+    <nav class="piano-nav">
+        <div class="white-key" data-note="C"><a href="#home">Home</a></div>
+        <div class="black-key" data-note="C#"></div>
+        <div class="white-key" data-note="D"><a href="#services">Services</a></div>
+        <div class="black-key" data-note="D#"></div>
+        <div class="white-key" data-note="E"><a href="#about">About</a></div>
+        <div class="white-key" data-note="F"><a href="#gallery">Gallery</a></div>
+        <div class="black-key" data-note="F#"></div>
+        <div class="white-key" data-note="G"><a href="#contact">Contact</a></div>
     </nav>
+
+    <!-- Hero Section with Video Background -->
+    <header id="home" class="hero">
+        <div class="hero-video-container">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="https://player.vimeo.com/external/368320203.hd.mp4?s=ed62dd31538d7ef092250598fdb13c3cd0857812&profile_id=175&oauth2_token_id=57447761" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Melanie Wainwright</h1>
+            <p class="subtitle">Jazz Piano & Vocal Coach in Berlin</p>
+            <div class="hero-buttons">
+                <a href="booking.html" class="cta-button primary">Book a Lesson</a>
+                <a href="#services" class="cta-button secondary">Explore Services</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
 
     <!-- Services Section -->
     <section id="services" class="services">
-        <h2>My Services</h2>
+        <h2 data-aos="fade-up">My Services</h2>
         <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-microphone"></i>
-                <h3>Private Vocal Lessons</h3>
-                <p>Personalized coaching for all levels, focusing on your unique voice and goals.</p>
-                <ul>
-                    <li>Technique & breathing</li>
-                    <li>Style development</li>
-                    <li>Repertoire building</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-music"></i>
-                <h3>Jazz Improvisation</h3>
-                <p>Learn the art of scat singing and jazz improvisation techniques.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-theater-masks"></i>
-                <h3>Performance Coaching</h3>
-                <p>Build stage presence and confidence for live performances.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-users"></i>
-                <h3>Workshops & Masterclasses</h3>
-                <p>Group sessions focusing on specific aspects of vocal jazz.</p>
-            </div>
+            <!-- Service cards here -->
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="about-content">
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>As a professional jazz vocalist and experienced vocal coach in Berlin, I bring both performance expertise and teaching passion to every lesson. My approach combines technical excellence with creative expression, helping singers find their unique voice in jazz.</p>
-                <p>With years of stage experience and a deep understanding of vocal technique, I guide students through their musical journey - from basic foundations to advanced jazz improvisation.</p>
-            </div>
-            <div class="about-image">
-                <img src="assets/images/melanie-profile.jpg" alt="Melanie Wainwright">
-            </div>
+            <!-- About content here -->
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <h2>Student Testimonials</h2>
-        <div class="testimonials-slider">
-            <div class="testimonial">
-                <p>"Melanie helped me discover my voice in ways I never thought possible. Her approach to jazz singing is both technical and intuitive."</p>
-                <cite>- Sarah K.</cite>
-            </div>
-            <div class="testimonial">
-                <p>"The best vocal coach in Berlin! Her methods for teaching jazz improvisation are clear and effective."</p>
-                <cite>- Michael R.</cite>
-            </div>
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>Performance Gallery</h2>
+        <div class="gallery-grid">
+            <!-- Gallery items here -->
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2>Get in Touch</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Berlin, Germany</p>
-                <p><i class="fas fa-envelope"></i> info@melanie-wainwright.de</p>
-                <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <select>
-                    <option value="">Select Service</option>
-                    <option value="private">Private Lessons</option>
-                    <option value="workshop">Workshop</option>
-                    <option value="performance">Performance Coaching</option>
-                </select>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-        </div>
+        <!-- Contact form here -->
     </section>
 
     <footer>
+        <div class="piano-footer">
+            <div class="keys-animation"></div>
+        </div>
         <p>&copy; 2024 Melanie Wainwright. All rights reserved.</p>
     </footer>
 
+    <!-- Background Music Toggle -->
+    <button class="music-toggle" aria-label="Toggle Background Music">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
