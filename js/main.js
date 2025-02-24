@@ -39,17 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Dynamic Gallery Loading
     const galleryGrid = document.querySelector(".gallery-grid");
     const images = [
-        "piano-1.jpg",
-        "performance-1.jpg",
-        "studio-1.jpg",
-        "workshop-1.jpg"
+        "https://picsum.photos/800/603",
+        "https://picsum.photos/800/604",
+        "https://picsum.photos/800/605",
+        "https://picsum.photos/800/606"
     ];
 
     images.forEach(image => {
         const div = document.createElement("div");
         div.className = "gallery-item";
         div.innerHTML = `
-            <img src="assets/images/${image}" alt="Gallery Image">
+            <img src="${image}" alt="Gallery Image">
             <div class="gallery-overlay">
                 <i class="fas fa-expand"></i>
             </div>

@@ -162,7 +162,7 @@ body {
 .about {
     padding: 5rem 2rem;
     background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7)),
-                url('https://images.unsplash.com/photo-1552422535-c45813c61732') center/cover;
+                url('https://picsum.photos/800/607') center/cover;
 }
 
 .about-content {
