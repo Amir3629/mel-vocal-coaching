@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Lesson - Melanie Wainwright</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/booking.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Piano Navigation -->
+    <nav class="piano-nav">
+        <div class="white-key" data-note="C"><a href="index.html">Home</a></div>
+        <div class="black-key" data-note="C#"></div>
+        <div class="white-key" data-note="D"><a href="index.html#services">Services</a></div>
+        <div class="black-key" data-note="D#"></div>
+        <div class="white-key" data-note="E"><a href="index.html#about">About</a></div>
+        <div class="white-key" data-note="F"><a href="index.html#gallery">Gallery</a></div>
+        <div class="black-key" data-note="F#"></div>
+        <div class="white-key" data-note="G"><a href="index.html#contact">Contact</a></div>
+    </nav>
+
+    <section class="booking-hero">
+        <h1>Book Your Lesson</h1>
+        <div class="booking-container">
+            <div class="booking-options">
+                <div class="booking-card" data-aos="fade-up">
+                    <h3>Trial Lesson</h3>
+                    <div class="price">€40</div>
+                    <ul>
+                        <li>45-minute session</li>
+                        <li>Skill assessment</li>
+                        <li>Goal setting</li>
+                        <li>Learning plan creation</li>
+                    </ul>
+                    <button class="book-now" data-type="trial">Book Trial</button>
+                </div>
+            </div>
+            
+            <form class="booking-form" id="bookingForm">
+                <!-- Form will be dynamically loaded -->
+            </form>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

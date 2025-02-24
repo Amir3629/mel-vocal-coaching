@@ -1,0 +1,117 @@
+.booking-hero {
+    padding-top: 100px;
+    min-height: 100vh;
+    background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7)),
+                url('../assets/images/piano-keys.jpg') center/cover;
+}
+
+.booking-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.booking-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.booking-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.booking-card:hover {
+    transform: translateY(-10px);
+}
+
+.booking-form {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* More booking styles */
+.booking-card h3 {
+    color: var(--accent-color);
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin: 1rem 0;
+}
+
+.booking-card ul {
+    list-style: none;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.booking-card li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.booking-card li:before {
+    content: "♪";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.book-now {
+    background: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.book-now:hover {
+    transform: scale(1.05);
+    background: #d4b671;
+}
+
+.form-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+    padding: 1rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+    color: var(--text-color);
+}
+
+.submit-btn {
+    background: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #d4b671;
+}
