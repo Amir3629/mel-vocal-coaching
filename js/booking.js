@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
     const bookingForm = document.getElementById('bookingForm');
     const bookingButtons = document.querySelectorAll('.book-now');
+=======
+﻿document.addEventListener("DOMContentLoaded", () => {
+    const bookingForm = document.getElementById("bookingForm");
+    const bookingButtons = document.querySelectorAll(".book-now");
+>>>>>>> 54b4f5992e180c9d13af32d5668aabdf7c167311
 
     // Dynamic form generation
     function generateForm(type) {
@@ -31,14 +37,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle booking button clicks
     bookingButtons.forEach(button => {
+<<<<<<< HEAD
         button.addEventListener('click', () => {
             const type = button.dataset.type;
             bookingForm.innerHTML = generateForm(type);
             bookingForm.scrollIntoView({ behavior: 'smooth' });
+=======
+        button.addEventListener("click", () => {
+            const type = button.dataset.type;
+            bookingForm.innerHTML = generateForm(type);
+            bookingForm.scrollIntoView({ behavior: "smooth" });
+>>>>>>> 54b4f5992e180c9d13af32d5668aabdf7c167311
         });
     });
 
     // Form submission
+<<<<<<< HEAD
     bookingForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         try {
@@ -51,3 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 }); 
+=======
+    bookingForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        try {
+            // Add your booking submission logic here
+            alert("Booking request received! We will confirm your slot soon.");
+            bookingForm.reset();
+        } catch (error) {
+            console.error("Booking error:", error);
+            alert("There was an error processing your booking. Please try again.");
+        }
+    });
+});
+>>>>>>> 54b4f5992e180c9d13af32d5668aabdf7c167311

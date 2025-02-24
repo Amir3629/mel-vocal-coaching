@@ -1,12 +1,21 @@
+<<<<<<< HEAD
 ﻿/* Base Styles */
 :root {
+=======
+﻿:root {
+>>>>>>> 54b4f5992e180c9d13af32d5668aabdf7c167311
     --primary-color: #1a1a1a;
     --accent-color: #c4a661;
     --piano-white: #f5f5f5;
     --piano-black: #333;
     --text-color: #ffffff;
+<<<<<<< HEAD
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Montserrat', sans-serif;
+=======
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Montserrat", sans-serif;
+>>>>>>> 54b4f5992e180c9d13af32d5668aabdf7c167311
 }
 
 /* Base Styles */
@@ -25,7 +34,10 @@ body {
     background-color: var(--primary-color);
     color: var(--text-color);
     line-height: 1.6;
+<<<<<<< HEAD
     overflow-x: hidden;
+=======
+>>>>>>> 54b4f5992e180c9d13af32d5668aabdf7c167311
 }
 
 /* Piano Navigation */
@@ -68,17 +80,21 @@ body {
     color: var(--piano-black);
     text-decoration: none;
     font-weight: 500;
+<<<<<<< HEAD
     transition: all 0.3s ease;
 }
 
 .white-key:hover {
     background: var(--accent-color);
+=======
+>>>>>>> 54b4f5992e180c9d13af32d5668aabdf7c167311
 }
 
 /* Hero Section */
 .hero {
     height: 100vh;
     position: relative;
+<<<<<<< HEAD
     overflow: hidden;
 }
 
@@ -297,3 +313,9 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+=======
+    background: url("https://images.unsplash.com/photo-1552422535-c45813c61732") center/cover;
+}
+
+/* Rest of your styles */
+>>>>>>> 54b4f5992e180c9d13af32d5668aabdf7c167311
