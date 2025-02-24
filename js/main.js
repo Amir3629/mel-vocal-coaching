@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-﻿// Smooth scrolling
-... (full JavaScript content) ...
-
-// Smooth page transitions
-document.addEventListener('DOMContentLoaded', () => {
-=======
 :root {
     --primary-color: #1a1a1a;
     --accent-color: #c4a661;
@@ -348,9 +341,9 @@ body {
 @keyframes slideKeys {
     from { transform: translateX(0); }
     to { transform:
-@'
+}
+
 document.addEventListener("DOMContentLoaded", () => {
->>>>>>> 54b4f5992e180c9d13af32d5668aabdf7c167311
     // Initialize AOS
     AOS.init({
         duration: 1000,
@@ -359,53 +352,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Piano Navigation Sound Effects
-<<<<<<< HEAD
-    const pianoKeys = document.querySelectorAll('.white-key, .black-key');
-    const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G'];
-=======
     const pianoKeys = document.querySelectorAll(".white-key, .black-key");
     const notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G"];
->>>>>>> 54b4f5992e180c9d13af32d5668aabdf7c167311
     
     pianoKeys.forEach((key, index) => {
         const note = notes[index];
         const audio = new Audio(`https://awiclass.monoame.com/pianosound/${note}.mp3`);
         
-<<<<<<< HEAD
-        key.addEventListener('mouseenter', () => {
-=======
         key.addEventListener("mouseenter", () => {
->>>>>>> 54b4f5992e180c9d13af32d5668aabdf7c167311
             audio.currentTime = 0;
             audio.play();
         });
     });
 
-<<<<<<< HEAD
-    // Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Background Music Control
-    const musicToggle = document.querySelector('.music-toggle');
-    const backgroundMusic = new Audio('https://example.com/path/to/jazz-background.mp3');
-    backgroundMusic.loop = true;
-    backgroundMusic.volume = 0.3;
-
-    musicToggle?.addEventListener('click', () => {
-        if (backgroundMusic.paused) {
-            backgroundMusic.play();
-            musicToggle.classList.add('playing');
-        } else {
-            backgroundMusic.pause();
-            musicToggle.classList.remove('playing');
-=======
     // Background Music Control
     const musicToggle = document.querySelector(".music-toggle");
     const backgroundMusic = new Audio("assets/audio/jazz-background.mp3");
@@ -419,24 +378,10 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             backgroundMusic.pause();
             musicToggle.classList.remove("playing");
->>>>>>> 54b4f5992e180c9d13af32d5668aabdf7c167311
         }
     });
 
     // Dynamic Gallery Loading
-<<<<<<< HEAD
-    const galleryGrid = document.querySelector('.gallery-grid');
-    const images = [
-        'piano-1.jpg',
-        'performance-1.jpg',
-        'studio-1.jpg',
-        'workshop-1.jpg'
-    ];
-
-    images.forEach(image => {
-        const div = document.createElement('div');
-        div.className = 'gallery-item';
-=======
     const galleryGrid = document.querySelector(".gallery-grid");
     const images = [
         "piano-1.jpg",
@@ -448,7 +393,6 @@ document.addEventListener("DOMContentLoaded", () => {
     images.forEach(image => {
         const div = document.createElement("div");
         div.className = "gallery-item";
->>>>>>> 54b4f5992e180c9d13af32d5668aabdf7c167311
         div.innerHTML = `
             <img src="assets/images/${image}" alt="Gallery Image">
             <div class="gallery-overlay">
@@ -459,40 +403,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Form Submission
-<<<<<<< HEAD
-    const contactForm = document.querySelector('.contact-form');
-    contactForm?.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        try {
-            alert('Thank you for your message! I will contact you soon.');
-            contactForm.reset();
-        } catch (error) {
-            console.error('Error:', error);
-            alert('There was an error sending your message. Please try again.');
-        }
-    });
-
-    // Scroll-based Animations
-    window.addEventListener('scroll', () => {
-        const nav = document.querySelector('.piano-nav');
-        if (window.scrollY > 100) {
-            nav.style.background = 'rgba(0,0,0,0.95)';
-        } else {
-            nav.style.background = 'rgba(0,0,0,0.7)';
-        }
-    });
-});
-
-// Form handling
-const bookingForm = document.querySelector('.booking-form');
-if (bookingForm) {
-    bookingForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        // Add your form submission logic here
-        alert('Thank you for your booking request! I will contact you soon.');
-    });
-}
-=======
     const contactForm = document.querySelector(".contact-form");
     if (contactForm) {
         contactForm.addEventListener("submit", async (e) => {
@@ -518,4 +428,13 @@ if (bookingForm) {
         }
     });
 });
->>>>>>> 54b4f5992e180c9d13af32d5668aabdf7c167311
+
+// Form handling
+const bookingForm = document.querySelector('.booking-form');
+if (bookingForm) {
+    bookingForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        // Add your form submission logic here
+        alert('Thank you for your booking request! I will contact you soon.');
+    });
+}
