@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Background Music Control
     const musicToggle = document.querySelector(".music-toggle");
-    const backgroundMusic = new Audio("assets/audio/jazz-background.mp3");
+    const backgroundMusic = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
     backgroundMusic.loop = true;
     backgroundMusic.volume = 0.3;
 
