@@ -9,19 +9,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add YouTube background music (autoplay)
+    // Add YouTube background music with autoplay (muted initially)
     const musicContainer = document.createElement('div');
     musicContainer.style.display = 'none';
     musicContainer.innerHTML = `
         <iframe id="youtube-audio" 
-                src="https://www.youtube.com/embed/AWsarzdZ1u8?autoplay=1&loop=1&playlist=AWsarzdZ1u8" 
+                src="https://www.youtube.com/embed/AWsarzdZ1u8?autoplay=1&loop=1&playlist=AWsarzdZ1u8&mute=1" 
                 allow="autoplay" 
                 style="display: none">
         </iframe>
     `;
     document.body.appendChild(musicContainer);
 
-    // Initialize AOS animation library with smoother settings
+    // Show unmute button immediately
+    const musicButton = document.createElement('button');
+    musicButton.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Start with muted icon
+    musicButton.className = 'music-toggle';
+    musicButton.title = "Click to play music";
+    document.body.appendChild(musicButton);
+
+    // Add pulsing animation to draw attention
+    musicButton.classList.add('pulse-attention');
+    
+    // Background music control
+    musicButton.addEventListener('click', () => {
+        const iframe = document.getElementById('youtube-audio');
+        
+        if (iframe.src.includes('mute=1')) {
+            // Unmute the audio
+            iframe.src = iframe.src.replace('mute=1', 'mute=0');
+            musicButton.innerHTML = '<i class="fas fa-music"></i>';
+            musicButton.classList.add('playing');
+            musicButton.classList.remove('pulse-attention');
+            musicButton.title = "Music is playing";
+        } else {
+            // Mute the audio
+            iframe.src = iframe.src.replace('mute=0', 'mute=1');
+            musicButton.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            musicButton.classList.remove('playing');
+            musicButton.title = "Music is muted";
+        }
+    });
+
+    // Initialize AOS animation library
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 1200,
@@ -49,24 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.style.background = 'rgba(26, 26, 26, 0.95)';
         } else {
             nav.style.background = 'rgba(26, 26, 26, 0.9)';
-        }
-    });
-
-    // Background music control with better styling
-    const musicButton = document.createElement('button');
-    musicButton.innerHTML = '<i class="fas fa-music"></i>';
-    musicButton.className = 'music-toggle';
-    musicButton.classList.add('playing'); // Start as playing
-    document.body.appendChild(musicButton);
-
-    musicButton.addEventListener('click', () => {
-        const iframe = document.getElementById('youtube-audio');
-        if (iframe.src.includes('autoplay=1')) {
-            iframe.src = iframe.src.replace('autoplay=1', 'autoplay=0');
-            musicButton.classList.remove('playing');
-        } else {
-            iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1');
-            musicButton.classList.add('playing');
         }
     });
 });

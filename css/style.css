@@ -927,4 +927,27 @@ footer {
     .contact-form {
         padding: 2rem 1.5rem;
     }
+}
+
+/* Add a new animation class for the music button */
+.pulse-attention {
+    animation: pulse-attention 2s infinite;
+    box-shadow: 0 0 0 rgba(196, 166, 97, 0.4);
+}
+
+@keyframes pulse-attention {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(196, 166, 97, 0.7);
+    }
+    
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 15px rgba(196, 166, 97, 0);
+    }
+    
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(196, 166, 97, 0);
+    }
 } 
