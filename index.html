@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -26,81 +27,185 @@
         <video class="hero-video" autoplay muted loop playsinline>
             <source src="https://player.vimeo.com/external/368320203.hd.mp4?s=ed62dd31538d7ef092250598fdb13c3cd0857812&profile_id=175&oauth2_token_id=57447761" type="video/mp4">
         </video>
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
             <h1>Melanie Wainwright</h1>
             <p>Jazz Piano & Vocal Coach in Berlin</p>
             <a href="booking.html" class="cta-button">Book a Lesson</a>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section (Enhanced) -->
     <section id="services" class="services">
-        <h2>My Services</h2>
+        <h2 data-aos="fade-up">My Services</h2>
         <div class="services-grid">
-            <div class="service-card" data-aos="fade-up">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="card-image">
-                    <img src="https://picsum.photos/800/600" alt="Private Lessons">
+                    <img src="assets/images/private-lessons.jpg" alt="Private Lessons">
                     <div class="price-tag">From €60/hr</div>
                 </div>
                 <div class="card-content">
-                    <h3>Private Lessons</h3>
-                    <p>One-on-one instruction tailored to your goals and style preferences.</p>
+                    <h3>Private Vocal Lessons</h3>
+                    <p>Personalized one-on-one instruction tailored to your unique voice and goals.</p>
                     <ul>
-                        <li>Vocal Technique</li>
-                        <li>Piano Fundamentals</li>
-                        <li>Jazz Improvisation</li>
+                        <li>Breathing & Technique Development</li>
+                        <li>Vocal Range Expansion</li>
+                        <li>Style & Interpretation</li>
+                        <li>Performance Preparation</li>
                     </ul>
                     <a href="booking.html?type=private" class="learn-more">Book Now</a>
                 </div>
             </div>
-            <!-- More service cards... -->
+            
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-image">
+                    <img src="assets/images/jazz-improv.jpg" alt="Jazz Improvisation">
+                    <div class="price-tag">From €70/hr</div>
+                </div>
+                <div class="card-content">
+                    <h3>Jazz Improvisation</h3>
+                    <p>Master the art of jazz scatting and melodic improvisation.</p>
+                    <ul>
+                        <li>Scat Vocabulary Building</li>
+                        <li>Chord-Scale Relationships</li>
+                        <li>Rhythmic Development</li>
+                        <li>Transcription & Analysis</li>
+                    </ul>
+                    <a href="booking.html?type=jazz" class="learn-more">Book Now</a>
+                </div>
+            </div>
+            
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-image">
+                    <img src="assets/images/performance-coaching.jpg" alt="Performance Coaching">
+                    <div class="price-tag">From €75/hr</div>
+                </div>
+                <div class="card-content">
+                    <h3>Performance Coaching</h3>
+                    <p>Develop captivating stage presence and performance confidence.</p>
+                    <ul>
+                        <li>Microphone Technique</li>
+                        <li>Stage Movement & Presence</li>
+                        <li>Audience Connection</li>
+                        <li>Performance Anxiety Management</li>
+                    </ul>
+                    <a href="booking.html?type=performance" class="learn-more">Book Now</a>
+                </div>
+            </div>
+            
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-image">
+                    <img src="assets/images/piano-vocals.jpg" alt="Piano/Vocal Coordination">
+                    <div class="price-tag">From €80/hr</div>
+                </div>
+                <div class="card-content">
+                    <h3>Piano/Vocal Coordination</h3>
+                    <p>Learn to accompany yourself while singing with style and confidence.</p>
+                    <ul>
+                        <li>Basic Piano Technique</li>
+                        <li>Vocal Independence</li>
+                        <li>Jazz Voicings & Comping</li>
+                        <li>Arrangement Skills</li>
+                    </ul>
+                    <a href="booking.html?type=piano-vocal" class="learn-more">Book Now</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section (Enhanced) -->
     <section id="about" class="about">
-        <div class="about-content" data-aos="fade-right">
-            <div class="about-text">
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right">
                 <h2>About Me</h2>
-                <p>With over 15 years of experience in jazz piano and vocals, I bring both technical expertise and creative passion to every lesson. My approach combines classical foundation with jazz improvisation, helping you develop your unique voice.</p>
+                <p class="bio-intro">With over 15 years of experience in jazz piano and vocals, I bring both technical expertise and creative passion to every lesson.</p>
+                
+                <p>My journey in music began at the Berklee College of Music, where I received formal training in jazz voice and piano performance. After graduating with honors, I toured extensively with various jazz ensembles throughout Europe and North America, performing at renowned venues including the Blue Note in New York and Ronnie Scott's in London.</p>
+                
+                <p>My teaching philosophy blends rigorous technical development with creative exploration. I believe that a strong foundation in breath support, vocal placement, and articulation is essential, but equally important is developing each student's unique artistic voice. Whether you're a beginner finding your sound or an experienced performer refining your craft, I create a supportive environment where you can take risks and grow.</p>
+                
+                <p>Specializing in jazz vocals, I help students navigate the complexities of swing phrasing, improvisation, and the subtleties of jazz harmony. My approach integrates techniques from classical bel canto to contemporary vocal methods, ensuring versatility and vocal longevity.</p>
+                
                 <div class="experience-highlights">
-                    <div class="highlight">
+                    <div class="highlight" data-aos="zoom-in" data-aos-delay="100">
                         <span class="number">15+</span>
                         <span class="label">Years Experience</span>
                     </div>
-                    <div class="highlight">
+                    <div class="highlight" data-aos="zoom-in" data-aos-delay="200">
                         <span class="number">500+</span>
                         <span class="label">Students Taught</span>
                     </div>
-                    <div class="highlight">
+                    <div class="highlight" data-aos="zoom-in" data-aos-delay="300">
                         <span class="number">100+</span>
                         <span class="label">Live Performances</span>
                     </div>
                 </div>
             </div>
             <div class="about-image" data-aos="fade-left">
-                <img src="https://picsum.photos/800/601" alt="Melanie Wainwright">
+                <img src="assets/images/profile.jpg" alt="Melanie Wainwright">
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <h2>Performance Gallery</h2>
-        <div class="gallery-grid">
-            <!-- Gallery items will be dynamically loaded -->
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2 data-aos="fade-up">What My Students Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+                <div class="quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Melanie completely transformed my approach to jazz singing. Her technical exercises expanded my range by nearly an octave, and her improvisation methods helped me find freedom in my scatting that I never thought possible.</p>
+                    <div class="student-info">
+                        <img src="assets/images/student-1.jpg" alt="Sarah K.">
+                        <div>
+                            <h4>Sarah K.</h4>
+                            <p>Student for 2 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+                <div class="quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>As a professional pianist transitioning to jazz vocals, I was looking for someone who understood both worlds. Melanie's integrated approach to piano-vocal coordination was exactly what I needed to bring authenticity to my performances.</p>
+                    <div class="student-info">
+                        <img src="assets/images/student-2.jpg" alt="Marcus T.">
+                        <div>
+                            <h4>Marcus T.</h4>
+                            <p>Student for 1.5 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial" data-aos="fade-up" data-aos-delay="300">
+                <div class="quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>I've worked with many vocal coaches, but Melanie stands out for her ability to diagnose technical issues quickly and provide effective solutions. Her deep knowledge of jazz history and theory contextualizes everything we work on.</p>
+                    <div class="student-info">
+                        <img src="assets/images/student-3.jpg" alt="Elena J.">
+                        <div>
+                            <h4>Elena J.</h4>
+                            <p>Student for 3 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section (Enhanced) -->
     <section id="contact" class="contact">
+        <div class="contact-background">
+            <div class="contact-overlay"></div>
+        </div>
         <div class="contact-content">
             <div class="contact-info" data-aos="fade-right">
                 <h2>Get in Touch</h2>
                 <div class="contact-details">
                     <div class="detail">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>Kreuzberg, Berlin</p>
+                        <p>Studio in Kreuzberg, Berlin</p>
                     </div>
                     <div class="detail">
                         <i class="fas fa-envelope"></i>
@@ -110,21 +215,28 @@
                         <i class="fas fa-phone"></i>
                         <p>+49 (0) 123 456789</p>
                     </div>
+                    <div class="detail">
+                        <i class="fas fa-clock"></i>
+                        <p>Lessons available: Mon-Fri 10:00-20:00</p>
+                    </div>
                 </div>
                 <div class="social-links">
                     <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-spotify"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-soundcloud"></i></a>
                 </div>
             </div>
             <form class="contact-form" data-aos="fade-left">
+                <h3>Send a Message</h3>
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
                 <select required>
                     <option value="">Select Service</option>
                     <option value="private">Private Lessons</option>
-                    <option value="group">Group Workshop</option>
-                    <option value="online">Online Coaching</option>
+                    <option value="jazz">Jazz Improvisation</option>
+                    <option value="performance">Performance Coaching</option>
+                    <option value="piano-vocal">Piano/Vocal Coordination</option>
                 </select>
                 <textarea placeholder="Your Message" required></textarea>
                 <button type="submit" class="submit-btn">Send Message</button>
@@ -133,18 +245,43 @@
     </section>
 
     <footer>
-        <div class="piano-footer">
-            <!-- Piano keys animation -->
-            <div class="keys-animation"></div>
+        <div class="footer-top">
+            <div class="footer-col">
+                <h3>Melanie Wainwright</h3>
+                <p>Elevating vocal artistry through personalized jazz coaching and performance training in the heart of Berlin.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Latest Blog Posts</h3>
+                <div class="blog-preview">
+                    <a href="#">The Art of Scatting: Beyond Syllables</a>
+                    <span>May 12, 2023</span>
+                </div>
+                <div class="blog-preview">
+                    <a href="#">Vocal Health for Jazz Singers</a>
+                    <span>April 28, 2023</span>
+                </div>
+            </div>
         </div>
-        <p>&copy; 2024 Melanie Wainwright. All rights reserved.</p>
+        <div class="footer-bottom">
+            <div class="piano-footer">
+                <!-- Piano keys animation -->
+                <div class="keys-animation"></div>
+            </div>
+            <p>&copy; 2024 Melanie Wainwright Vocal Coaching. All rights reserved.</p>
+        </div>
     </footer>
 
-    <!-- Background Music -->
-    <audio id="background-music" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-    </audio>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
