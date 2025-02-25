@@ -31,6 +31,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Create piano keys animation in footer
+    const keysContainer = document.querySelector('.keys-animation');
+    if (keysContainer) {
+        for (let i = 0; i < 12; i++) {
+            const key = document.createElement('div');
+            key.className = i % 2 === 0 ? 'white-key' : 'black-key';
+            key.style.animationDelay = `${i * 0.2}s`;
+            keysContainer.appendChild(key);
+        }
+    }
+
     // Navbar background change on scroll
     window.addEventListener('scroll', function() {
         const nav = document.querySelector('.main-nav');
@@ -65,16 +76,19 @@ let currentTestimonial = 0;
 const testimonials = document.querySelectorAll('.testimonial');
 
 function showNextTestimonial() {
+    if (testimonials.length <= 1) return;
     testimonials[currentTestimonial].style.display = 'none';
     currentTestimonial = (currentTestimonial + 1) % testimonials.length;
     testimonials[currentTestimonial].style.display = 'block';
 }
 
 // Change testimonial every 5 seconds
-setInterval(showNextTestimonial, 5000);
+if (document.querySelectorAll('.testimonial').length > 1) {
+    setInterval(showNextTestimonial, 5000);
+}
 
 // Form submission handling
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
+document.querySelector('.contact-form')?.addEventListener('submit', function(e) {
     e.preventDefault();
     alert('Thank you for your message! I will get back to you soon.');
 }); 

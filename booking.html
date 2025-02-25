@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/booking.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Piano Navigation -->
-    <nav class="piano-nav">
-        <div class="white-key" data-note="C"><a href="index.html">Home</a></div>
-        <div class="black-key" data-note="C#"></div>
-        <div class="white-key" data-note="D"><a href="index.html#services">Services</a></div>
-        <div class="black-key" data-note="D#"></div>
-        <div class="white-key" data-note="E"><a href="index.html#about">About</a></div>
-        <div class="white-key" data-note="F"><a href="index.html#gallery">Gallery</a></div>
-        <div class="black-key" data-note="F#"></div>
-        <div class="white-key" data-note="G"><a href="index.html#contact">Contact</a></div>
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
     </nav>
 
     <section class="booking-hero">
-        <h1>Book Your Lesson</h1>
+        <h1 data-aos="fade-up">Book Your Lesson</h1>
         <div class="booking-container">
             <div class="booking-options">
                 <div class="booking-card" data-aos="fade-up">
@@ -37,15 +37,49 @@
                     </ul>
                     <button class="book-now" data-type="trial">Book Trial</button>
                 </div>
+                
+                <div class="booking-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Private Lesson</h3>
+                    <div class="price">€60</div>
+                    <ul>
+                        <li>60-minute session</li>
+                        <li>Personalized instruction</li>
+                        <li>Technique development</li>
+                        <li>Style coaching</li>
+                    </ul>
+                    <button class="book-now" data-type="private">Book Private</button>
+                </div>
+                
+                <div class="booking-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Package (5 Lessons)</h3>
+                    <div class="price">€275</div>
+                    <ul>
+                        <li>Five 60-minute sessions</li>
+                        <li>Progress tracking</li>
+                        <li>Practice materials</li>
+                        <li>10% discount</li>
+                    </ul>
+                    <button class="book-now" data-type="package">Book Package</button>
+                </div>
             </div>
             
-            <form class="booking-form" id="bookingForm">
+            <form class="booking-form" id="bookingForm" data-aos="fade-up">
                 <!-- Form will be dynamically loaded -->
             </form>
         </div>
     </section>
 
+    <footer>
+        <div class="footer-bottom">
+            <div class="piano-footer">
+                <div class="keys-animation"></div>
+            </div>
+            <p>&copy; 2024 Melanie Wainwright Vocal Coaching. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/booking.js"></script>
 </body>
 </html>
