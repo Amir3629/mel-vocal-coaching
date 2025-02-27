@@ -69,7 +69,7 @@
                 <h2>Complete Your Booking</h2>
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
-                <input type="date" placeholder="Preferred Date" required>
+                <input type="date" id="bookingDate" placeholder="Preferred Date" required>
                 <button type="submit" class="submit-btn">Confirm Booking</button>
             </form>
         </div>
@@ -78,8 +78,10 @@
     <div class="member-account">
         <h2>Mitgliederbereich</h2>
         <form id="member-form">
+            <input type="text" placeholder="Username" required>
             <input type="email" placeholder="Ihre E-Mail" required>
-            <button type="submit">Termin buchen</button>
+            <input type="password" placeholder="Passwort" required>
+            <button type="submit">Registrieren</button>
         </form>
     </div>
 
@@ -111,7 +113,7 @@
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
                 dateClick: function(info) {
-                    // Show available times for booking
+                    document.getElementById('bookingDate').value = info.dateStr;
                 }
             });
             calendar.render();
