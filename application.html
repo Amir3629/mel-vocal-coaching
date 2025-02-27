@@ -5,6 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application - Chor Next Door</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .main-nav {
+            background-color: #1e1e1e;
+            padding: 10px;
+        }
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        .main-nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .main-nav a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .application-form {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s;
+        }
+        input:focus, textarea:focus {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        button {
+            background-color: #ffcc00;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #e6b800;
+        }
+    </style>
 </head>
 <body>
     <nav class="main-nav">
@@ -25,12 +81,23 @@
             <input type="email" id="email" placeholder="Your Email" required>
             <label for="message">Why do you want to join?</label>
             <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Submit Application</button>
+            <button type="submit">Apply Now</button>
         </form>
     </section>
 
     <footer>
         <p>&copy; 2024 Chor Next Door. Alle Rechte vorbehalten.</p>
     </footer>
+
+    <script>
+        document.getElementById('applyForm').addEventListener('submit', function(event) {
+            const emailField = document.getElementById('email');
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailField.value)) {
+                alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+                event.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html> 
