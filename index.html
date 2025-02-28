@@ -89,6 +89,35 @@
         .service-card h3 {
             margin: 0;
         }
+        .testimonials {
+            padding: 50px 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .testimonial-carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+        .testimonial-card {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            flex: 0 0 300px;
+            transition: transform 0.3s;
+        }
+        .testimonial-card h4 {
+            margin-top: 10px;
+            color: #ffcc00;
+        }
+        @media (max-width: 768px) {
+            .testimonial-card {
+                flex: 0 0 100%;
+            }
+        }
     </style>
 </head>
 
@@ -135,11 +164,44 @@
 
     <section id="testimonials" class="testimonials">
         <h2>Was meine Schüler sagen</h2>
-        <p>Hören Sie von meinen Schülern über ihre Reisen und Erfolge durch das Gesangstraining.</p>
+        <div class="testimonial-carousel">
+            <div class="testimonial-card">
+                <p>"Melanie's coaching transformed my singing! I feel more confident and expressive than ever."</p>
+                <h4>- Anna Müller</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"The lessons are tailored to my needs, and I love the supportive environment!"</p>
+                <h4>- Lukas Schmidt</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"I never thought I could sing jazz, but Melanie made it possible!"</p>
+                <h4>- Sarah Becker</h4>
+            </div>
+            <!-- Add more testimonials as needed -->
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2024 Melanie Wainwright Vocal Coaching. Alle Rechte vorbehalten.</p>
     </footer>
+
+    <script>
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        let currentIndex = 0;
+        const totalTestimonials = testimonials.length;
+
+        function showTestimonials() {
+            testimonials.forEach((card, index) => {
+                card.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
+            });
+        }
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalTestimonials;
+            showTestimonials();
+        }, 5000);
+
+        window.onload = showTestimonials;
+    </script>
 </body>
 </html>
