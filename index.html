@@ -10,28 +10,125 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body {
-            background-image: url('assets/your-background-image.jpg'); /* Replace with your image */
-            background-size: cover;
-            background-position: center;
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+        }
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #1e1e1e;
+        }
+        .main-nav h1 {
+            color: #ffffff;
+            margin: 0;
+        }
+        .book-now {
+            background-color: #ffcc00;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .book-now:hover {
+            background-color: #e6b800;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #1e1e1e;
+        }
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+        .cta-button {
+            background-color: #ffcc00;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #e6b800;
+        }
+        .music-player {
+            text-align: center;
+            margin: 20px 0;
+            color: #ffffff;
+        }
+        .music-player audio {
+            width: 100%;
+            max-width: 600px;
+            background-color: #1e1e1e;
+            border-radius: 5px;
+        }
+        .services-detail, .teaching-philosophy, .success-stories, .upcoming-events {
+            background-color: #1e1e1e;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        .service-package {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .service-package h3 {
+            margin: 0;
+        }
+        .teaching-philosophy, .success-stories, .upcoming-events {
+            margin: 20px;
+            color: #ffffff;
+        }
+        .success-stories ul {
+            list-style-type: none;
+            padding: 0;
         }
     </style>
 </head>
 
 <body>
-    <!-- Main Navigation -->
     <nav class="main-nav">
+        <h1>Mel Vocal Coaching</h1>
+        <button class="book-now">Book Now</button>
         <ul>
-            <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="choir.html">Chor Next Door</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="choir.html">Chor Next Door</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="hero">
         <div class="video-container">
             <video class="hero-video" autoplay muted loop playsinline>
                 <source src="https://player.vimeo.com/external/480164254.hd.mp4?s=b7a76586494030a23f2dc5c7ce46ebf0ce9a8b10&profile_id=175" type="video/mp4">
@@ -282,6 +379,76 @@
                 Learn how I work with students to develop their unique voice and musical expression.
             </p>
         </div>
+    </section>
+
+    <section class="music-player">
+        <h2>Listen to Our Jazz Tracks</h2>
+        <audio controls>
+            <source src="path/to/your/jazz-track.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <section class="services-detail">
+        <h2>Our Services</h2>
+        <div class="service-package">
+            <h3>Private Lessons</h3>
+            <p>Personalized one-on-one instruction tailored to your unique voice and goals.</p>
+            <ul>
+                <li>Breathing & Technique Development</li>
+                <li>Vocal Range Expansion</li>
+                <li>Style & Interpretation</li>
+                <li>Performance Preparation</li>
+            </ul>
+        </div>
+        <div class="service-package">
+            <h3>Jazz Improvisation Training</h3>
+            <p>Master the art of jazz scatting and melodic improvisation.</p>
+            <ul>
+                <li>Scat Vocabulary Building</li>
+                <li>Chord-Scale Relationships</li>
+                <li>Rhythmic Development</li>
+                <li>Transcription & Analysis</li>
+            </ul>
+        </div>
+        <div class="service-package">
+            <h3>Stage Performance Coaching</h3>
+            <p>Develop captivating stage presence and performance confidence.</p>
+            <ul>
+                <li>Microphone Technique</li>
+                <li>Stage Movement & Presence</li>
+                <li>Audience Connection</li>
+                <li>Performance Anxiety Management</li>
+            </ul>
+        </div>
+        <div class="service-package">
+            <h3>Workshops & Masterclasses</h3>
+            <p>Engage in group sessions focusing on specific techniques and peer learning.</p>
+        </div>
+        <div class="service-package">
+            <h3>Audition Preparation</h3>
+            <p>Get ready for your auditions with tailored coaching and feedback.</p>
+        </div>
+    </section>
+
+    <section class="teaching-philosophy">
+        <h2>Teaching Philosophy</h2>
+        <p>My teaching philosophy blends rigorous technical development with creative exploration. I believe that a strong foundation in breath support, vocal placement, and articulation is essential, but equally important is developing each student's unique artistic voice.</p>
+    </section>
+
+    <section class="success-stories">
+        <h2>Success Stories</h2>
+        <p>Hear from my students about their journeys and achievements through vocal coaching.</p>
+        <ul>
+            <li>Sarah K.: "Melanie completely transformed my approach to jazz singing. Her technical exercises expanded my range by nearly an octave!"</li>
+            <li>Marcus T.: "As a professional pianist transitioning to jazz vocals, Melanie's integrated approach was exactly what I needed!"</li>
+            <li>Elena J.: "I've worked with many vocal coaches, but Melanie stands out for her ability to diagnose technical issues quickly!"</li>
+        </ul>
+    </section>
+
+    <section class="upcoming-events">
+        <h2>Upcoming Events</h2>
+        <p>Stay tuned for our upcoming workshops and events that will elevate your singing experience!</p>
     </section>
 
     <footer>
