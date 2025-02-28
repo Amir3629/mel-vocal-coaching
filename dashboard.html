@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Mel Vocal Coaching</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+        }
+        .main-nav {
+            background-color: #1e1e1e;
+            padding: 10px;
+        }
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        .main-nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .main-nav a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .dashboard {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .dashboard h1 {
+            text-align: center;
+        }
+        .profile-info, .booking-history, .lesson-management {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #2a2a2a;
+            border-radius: 5px;
+        }
+        .profile-info label, .booking-history label, .lesson-management label {
+            font-weight: bold;
+        }
+        .booking-history ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .booking-history li {
+            margin: 5px 0;
+        }
+        @media (max-width: 768px) {
+            .dashboard {
+                padding: 10px;
+            }
+            .main-nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .main-nav li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="login.html">Sign In</a></li>
+        </ul>
+    </nav>
+
+    <section class="dashboard">
+        <h1>User Dashboard</h1>
+        <div class="profile-info">
+            <h2>Profile Information</h2>
+            <label for="username">Username:</label>
+            <p id="username">[User's Username]</p>
+            <label for="email">Email:</label>
+            <p id="email">[User's Email]</p>
+        </div>
+        <div class="booking-history">
+            <h2>Booking History</h2>
+            <ul>
+                <li>Lesson on [Date] - [Type of Lesson]</li>
+                <li>Lesson on [Date] - [Type of Lesson]</li>
+                <li>Lesson on [Date] - [Type of Lesson]</li>
+            </ul>
+        </div>
+        <div class="lesson-management">
+            <h2>Manage Your Lessons</h2>
+            <p>Options to view, cancel, or reschedule lessons will be available here.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Melanie Wainwright Vocal Coaching. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

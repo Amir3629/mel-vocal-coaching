@@ -10,6 +10,69 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href='https://unpkg.com/@fullcalendar/core/main.css' rel='stylesheet' />
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+        }
+        .main-nav {
+            background-color: #1e1e1e;
+            padding: 10px;
+        }
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        .main-nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .main-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .main-nav i {
+            margin-right: 5px;
+        }
+        .booking-hero {
+            text-align: center;
+            margin: 20px;
+        }
+        .booking-options {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .booking-card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+        .booking-card:hover {
+            transform: scale(1.05);
+        }
+        .price {
+            font-size: 1.5em;
+            color: #ffcc00;
+        }
+        .submit-btn {
+            background-color: #ffcc00;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #e6b800;
+        }
+    </style>
 </head>
 <body>
     <!-- Main Navigation -->
@@ -20,12 +83,14 @@
             <li><a href="index.html#about">About</a></li>
             <li><a href="index.html#testimonials">Testimonials</a></li>
             <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+            <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Sign In</a></li>
         </ul>
     </nav>
 
     <section class="booking-hero">
-        <h1>Buche Deine Lektion</h1>
-        <p>Wählen Sie aus verschiedenen Optionen, um Ihre musikalischen Fähigkeiten zu verbessern.</p>
+        <h1>Book Your Lesson</h1>
+        <p>Choose from various options to enhance your musical skills.</p>
         <div class="booking-container">
             <div class="booking-options">
                 <div class="booking-card" data-aos="fade-up">
@@ -37,7 +102,7 @@
                         <li>Goal setting</li>
                         <li>Learning plan creation</li>
                     </ul>
-                    <button class="book-now" data-type="trial">Book Trial</button>
+                    <button class="submit-btn" data-type="trial">Book Trial</button>
                 </div>
                 
                 <div class="booking-card" data-aos="fade-up" data-aos-delay="200">
@@ -49,7 +114,7 @@
                         <li>Technique development</li>
                         <li>Style coaching</li>
                     </ul>
-                    <button class="book-now" data-type="private">Book Private</button>
+                    <button class="submit-btn" data-type="private">Book Private</button>
                 </div>
                 
                 <div class="booking-card" data-aos="fade-up" data-aos-delay="400">
@@ -61,7 +126,7 @@
                         <li>Practice materials</li>
                         <li>10% discount</li>
                     </ul>
-                    <button class="book-now" data-type="package">Book Package</button>
+                    <button class="submit-btn" data-type="package">Book Package</button>
                 </div>
             </div>
             
