@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jetzt Buchen - Mel Vocal Coaching</title>
+    <title>Buchung - Mel Vocal Coaching</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/booking.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -39,30 +38,23 @@
         .main-nav a:hover {
             color: #ffcc00;
         }
-        .booking-hero {
-            text-align: center;
-            margin: 20px;
-        }
-        .booking-options {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px 0;
-        }
-        .booking-card {
-            background-color: rgba(30, 30, 30, 0.8);
+        .booking-form {
+            max-width: 600px;
+            margin: 50px auto;
             padding: 20px;
+            background-color: rgba(30, 30, 30, 0.8);
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s;
         }
-        .booking-card:hover {
-            transform: scale(1.05);
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
-        .price {
-            font-size: 1.5em;
-            color: #ffcc00;
-        }
-        .submit-btn {
+        button {
             background-color: #ffcc00;
             color: #121212;
             border: none;
@@ -71,8 +63,11 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        .submit-btn:hover {
+        button:hover {
             background-color: #e6b800;
+        }
+        footer {
+            margin-top: auto;
         }
     </style>
 </head>
@@ -80,62 +75,28 @@
     <nav class="main-nav">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#services">Services</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#testimonials">Testimonials</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-            <li><a href="signup.html"><i class="fas fa-user-plus"></i> Registrieren</a></li>
-            <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Anmelden</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="choir.html">Chor Nächste Tür</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
         </ul>
     </nav>
 
-    <section class="booking-hero">
-        <h1>Jetzt Buchen</h1>
-        <p>Wählen Sie aus verschiedenen Optionen, um Ihre musikalischen Fähigkeiten zu verbessern.</p>
-        <div class="booking-container">
-            <div class="booking-options">
-                <div class="booking-card">
-                    <h3>Probelektion</h3>
-                    <div class="price">€40</div>
-                    <ul>
-                        <li>45-Minuten-Sitzung</li>
-                        <li>Fähigkeitsbewertung</li>
-                        <li>Zielsetzung</li>
-                        <li>Erstellung eines Lernplans</li>
-                    </ul>
-                    <button class="submit-btn" data-type="trial">Probe Buchen</button>
-                </div>
-                <div class="booking-card">
-                    <h3>Private Lektion</h3>
-                    <div class="price">€60</div>
-                    <ul>
-                        <li>60-Minuten-Sitzung</li>
-                        <li>Personalisierte Anleitung</li>
-                        <li>Technikentwicklung</li>
-                        <li>Stilcoaching</li>
-                    </ul>
-                    <button class="submit-btn" data-type="private">Private Buchen</button>
-                </div>
-                <div class="booking-card">
-                    <h3>Paket (5 Lektionen)</h3>
-                    <div class="price">€275</div>
-                    <ul>
-                        <li>Fünf 60-Minuten-Sitzungen</li>
-                        <li>Fortschrittsverfolgung</li>
-                        <li>Übungsmaterialien</li>
-                        <li>10% Rabatt</li>
-                    </ul>
-                    <button class="submit-btn" data-type="package">Paket Buchen</button>
-                </div>
-            </div>
-            <form class="booking-form" id="bookingForm">
-                <h2>Vervollständigen Sie Ihre Buchung</h2>
-                <input type="text" placeholder="Ihr Name" required>
-                <input type="email" placeholder="Ihre E-Mail" required>
-                <input type="date" id="bookingDate" placeholder="Bevorzugtes Datum" required>
-                <button type="submit" class="submit-btn">Buchung Bestätigen</button>
-            </form>
-        </div>
+    <section class="booking-form">
+        <h1>Buchung</h1>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Ihr Name" required>
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" placeholder="Ihre E-Mail" required>
+            <label for="lesson-type">Art der Lektion:</label>
+            <select id="lesson-type" required>
+                <option value="private">Private Lektion</option>
+                <option value="group">Gruppenlektion</option>
+            </select>
+            <label for="message">Nachricht:</label>
+            <textarea id="message" placeholder="Ihre Nachricht" required></textarea>
+            <button type="submit">Buchen</button>
+        </form>
     </section>
 
     <footer>
