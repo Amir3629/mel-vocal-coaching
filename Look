@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Melanie Wainwright Vocal Coaching</title>
+  <style>
+    /* Reset & Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      line-height: 1.6;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    a:hover {
+      color: #ff4081;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin-right: 20px;
+    }
+    nav li {
+      margin: 0 15px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+    
+    /* Hero Section with Video Background */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .hero video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      filter: brightness(0.7);
+    }
+    .hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .hero .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: fadeIn 2s ease-in;
+    }
+    .hero .content h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .hero .content p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    .hero .content .btn {
+      padding: 10px 30px;
+      background-color: #ff4081;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .hero .content .btn:hover {
+      background-color: #e73370;
+    }
+    
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease-in;
+    }
+    
+    /* Services Section */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .service {
+      background: #1e1e1e;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      width: 45%;
+      transition: transform 0.3s;
+    }
+    .service:hover {
+      transform: translateY(-10px);
+    }
+    .service h3 {
+      margin-top: 0;
+    }
+    
+    /* About Section */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .about img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+    .about .text {
+      flex: 1;
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .testimonial {
+      background: #1e1e1e;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+      max-width: 800px;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+    .testimonial p {
+      font-style: italic;
+    }
+    .testimonial h4 {
+      margin-top: 10px;
+    }
+    
+    /* Membership Section */
+    #membership p {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+    }
+    #membership .btn {
+      display: block;
+      margin: 0 auto;
+    }
+    
+    /* Contact Section */
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact input,
+    .contact textarea,
+    .contact select {
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+    }
+    .contact button {
+      padding: 10px;
+      background-color: #ff4081;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .contact button:hover {
+      background-color: #e73370;
+    }
+    
+    /* Footer */
+    footer {
+      background: #000;
+      padding: 20px 0;
+      text-align: center;
+      color: #fff;
+    }
+    footer p a {
+      margin: 0 10px;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      nav li {
+        margin: 10px 0;
+      }
+      .hero .content h1 {
+        font-size: 2.5em;
+      }
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+      .service {
+        width: 90%;
+      }
+      .about {
+        flex-direction: column;
+      }
+      .about img {
+        margin: 0 0 20px 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="container">
+    <div class="logo">Melanie Wainwright</div>
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    <ul id="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section with Video Background -->
+  <section class="hero" id="home">
+    <video autoplay muted loop playsinline>
+      <source src="https://example.com/path-to-your-video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Discover Your Voice</h1>
+      <p>Jazz Vocal Coaching in Berlin</p>
+      <button class="btn" onclick="location.href='#contact'">Book a Lesson</button>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="container">
+    <h2>Services I Offer</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Private Vocal Lessons</h3>
+        <p>Personalized one-on-one instruction tailored to your unique voice and goals.</p>
+        <ul>
+          <li>Breathing &amp; Technique Development</li>
+          <li>Vocal Range Expansion</li>
+          <li>Style &amp; Interpretation</li>
+          <li>Performance Preparation</li>
+        </ul>
+        <p><strong>From €60/hr</strong></p>
+        <button class="btn" onclick="location.href='#contact'">Book Now</button>
+      </div>
+      <div class="service">
+        <h3>Jazz Improvisation</h3>
+        <p>Master the art of jazz scatting and melodic improvisation.</p>
+        <ul>
+          <li>Scat Vocabulary Building</li>
+          <li>Chord-Scale Relationships</li>
+          <li>Rhythmic Development</li>
+          <li>Transcription &amp; Analysis</li>
+        </ul>
+        <p><strong>From €70/hr</strong></p>
+        <button class="btn" onclick="location.href='#contact'">Book Now</button>
+      </div>
+      <div class="service">
+        <h3>Performance Coaching</h3>
+        <p>Develop captivating stage presence and performance confidence.</p>
+        <ul>
+          <li>Microphone Technique</li>
+          <li>Stage Movement &amp; Presence</li>
+          <li>Audience Connection</li>
+          <li>Performance Anxiety Management</li>
+        </ul>
+        <p><strong>From €75/hr</strong></p>
+        <button class="btn" onclick="location.href='#contact'">Book Now</button>
+      </div>
+      <div class="service">
+        <h3>Piano/Vocal Coordination</h3>
+        <p>Learn to accompany yourself while singing with style and confidence.</p>
+        <ul>
+          <li>Basic Piano Technique</li>
+          <li>Vocal Independence</li>
+          <li>Jazz Voicings &amp; Comping</li>
+          <li>Arrangement Skills</li>
+        </ul>
+        <p><strong>From €80/hr</strong></p>
+        <button class="btn" onclick="location.href='#contact'">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <div class="about">
+      <img src="https://example.com/path-to-your-photo.jpg" alt="Melanie Wainwright" />
+      <div class="text">
+        <p>
+          With over 15 years of experience in jazz piano and vocals, I bring technical expertise and creative passion to every lesson. My journey began at Berklee College of Music and has taken me to stages across Europe and North America.
+        </p>
+        <p>
+          I believe in a personalized approach that blends rigorous technique with creative exploration. Specializing in jazz vocals, I help students navigate swing phrasing, improvisation, and jazz harmony. Join me in an inspiring learning environment where every lesson is tailored to your needs.
+        </p>
+        <p><strong>15+ Years Experience | 500+ Students Taught | 100+ Live Performances</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="container">
+    <h2>What My Students Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"Melanie completely transformed my approach to jazz singing. Her technical exercises expanded my range and her improvisation methods unlocked new creative possibilities."</p>
+        <h4>Sarah K.</h4>
+        <small>Student for 2 years</small>
+      </div>
+      <div class="testimonial">
+        <p>"As a professional pianist transitioning to jazz vocals, Melanie's integrated approach to piano-vocal coordination was exactly what I needed."</p>
+        <h4>Marcus T.</h4>
+        <small>Student for 1.5 years</small>
+      </div>
+      <div class="testimonial">
+        <p>"I’ve worked with many vocal coaches, but Melanie’s ability to diagnose technical issues quickly and provide effective solutions sets her apart."</p>
+        <h4>Elena J.</h4>
+        <small>Student for 3 years</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership Section -->
+  <section id="membership" class="container">
+    <h2>Membership &amp; Exclusive Access</h2>
+    <p>
+      Join our community to receive exclusive content, special offers, and early access to workshops and masterclasses.
+    </p>
+    <button class="btn" onclick="location.href='membership.html'">Become a Member</button>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container contact">
+    <h2>Get in Touch</h2>
+    <p>Studio in Kreuzberg, Berlin</p>
+    <p>Email: <a href="mailto:info@melanie-wainwright.de" style="color:#ff4081;">info@melanie-wainwright.de</a></p>
+    <p>Phone: +49 (0) 123 456789</p>
+    <p>Lessons available: Mon-Fri 10:00-20:00</p>
+    <form action="mailto:info@melanie-wainwright.de" method="post" enctype="text/plain">
+      <select name="service" required>
+        <option value="Private Lessons">Private Lessons</option>
+        <option value="Jazz Improvisation">Jazz Improvisation</option>
+        <option value="Performance Coaching">Performance Coaching</option>
+        <option value="Piano/Vocal Coordination">Piano/Vocal Coordination</option>
+      </select>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Melanie Wainwright Vocal Coaching. All rights reserved.</p>
+      <p>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    const menuToggle = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Melanie Wainwright Vocal Coaching</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Global Reset & Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #121212;
+      color: #fff;
+      line-height: 1.6;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #ff4081;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 1.8em;
+      font-weight: 700;
+      margin-left: 20px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin-right: 20px;
+    }
+    nav li {
+      margin: 0 15px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.8em;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('attached-image-1.jpg') center center/cover no-repeat;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero .content h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+    }
+    .hero .content p {
+      font-size: 1.5em;
+      margin-bottom: 30px;
+    }
+    .hero .content .btn {
+      padding: 12px 30px;
+      font-size: 1em;
+      background: #ff4081;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .hero .content .btn:hover {
+      background: #e73370;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 2.8em;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Services Section */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .service {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      width: 48%;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    .service:hover {
+      transform: translateY(-10px);
+    }
+    .service h3 {
+      margin-bottom: 10px;
+    }
+    .service ul {
+      list-style: disc;
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+    .service .btn {
+      margin-top: 10px;
+    }
+
+    /* About Section */
+    .about {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .about img {
+      width: 45%;
+      border-radius: 10px;
+      margin-right: 5%;
+    }
+    .about .text {
+      width: 50%;
+    }
+    .about .text p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .testimonial {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      margin-bottom: 20px;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .testimonial h4 {
+      font-weight: 700;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .gallery img {
+      width: 48%;
+      border-radius: 10px;
+    }
+
+    /* Membership Section */
+    #membership p {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+    }
+    #membership .btn {
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Contact Section */
+    .contact form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .contact input,
+    .contact textarea,
+    .contact select {
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+    }
+    .contact button {
+      padding: 12px;
+      background: #ff4081;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact button:hover {
+      background: #e73370;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      padding: 20px 0;
+      text-align: center;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      nav li {
+        margin: 10px 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .about {
+        flex-direction: column;
+      }
+      .about img,
+      .about .text {
+        width: 100%;
+        margin: 0 0 20px 0;
+      }
+      .services {
+        flex-direction: column;
+      }
+      .service {
+        width: 100%;
+      }
+      .gallery img {
+        width: 100%;
+      }
+      .hero .content h1 {
+        font-size: 2.5em;
+      }
+      .hero .content p {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="container">
+    <div class="logo">Melanie Wainwright</div>
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    <ul id="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="content">
+      <h1>Discover Your Voice</h1>
+      <p>Jazz Vocal Coaching in Berlin</p>
+      <button class="btn" onclick="location.href='#contact'">Book a Lesson</button>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="container">
+    <h2>Services I Offer</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Private Vocal Lessons</h3>
+        <p>Personalized one-on-one instruction tailored to your unique voice and goals.</p>
+        <ul>
+          <li>Breathing &amp; Technique Development</li>
+          <li>Vocal Range Expansion</li>
+          <li>Style &amp; Interpretation</li>
+          <li>Performance Preparation</li>
+        </ul>
+        <p><strong>From €60/hr</strong></p>
+        <button class="btn" onclick="location.href='#contact'">Book Now</button>
+      </div>
+      <div class="service">
+        <h3>Jazz Improvisation</h3>
+        <p>Master the art of jazz scatting and melodic improvisation.</p>
+        <ul>
+          <li>Scat Vocabulary Building</li>
+          <li>Chord-Scale Relationships</li>
+          <li>Rhythmic Development</li>
+          <li>Transcription &amp; Analysis</li>
+        </ul>
+        <p><strong>From €70/hr</strong></p>
+        <button class="btn" onclick="location.href='#contact'">Book Now</button>
+      </div>
+      <div class="service">
+        <h3>Performance Coaching</h3>
+        <p>Develop captivating stage presence and performance confidence.</p>
+        <ul>
+          <li>Microphone Technique</li>
+          <li>Stage Movement &amp; Presence</li>
+          <li>Audience Connection</li>
+          <li>Performance Anxiety Management</li>
+        </ul>
+        <p><strong>From €75/hr</strong></p>
+        <button class="btn" onclick="location.href='#contact'">Book Now</button>
+      </div>
+      <div class="service">
+        <h3>Piano/Vocal Coordination</h3>
+        <p>Learn to accompany yourself while singing with style and confidence.</p>
+        <ul>
+          <li>Basic Piano Technique</li>
+          <li>Vocal Independence</li>
+          <li>Jazz Voicings &amp; Comping</li>
+          <li>Arrangement Skills</li>
+        </ul>
+        <p><strong>From €80/hr</strong></p>
+        <button class="btn" onclick="location.href='#contact'">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <div class="about">
+      <img src="attached-image-2.jpg" alt="Melanie Wainwright" />
+      <div class="text">
+        <p>
+          With over 15 years of experience in jazz piano and vocals, I bring technical expertise and creative passion to every lesson. My journey began at Berklee College of Music and has taken me to stages across Europe and North America.
+        </p>
+        <p>
+          I believe in a personalized approach that blends rigorous technique with creative exploration. Specializing in jazz vocals, I help students navigate swing phrasing, improvisation, and jazz harmony. Join me in an inspiring learning environment where every lesson is tailored to your needs.
+        </p>
+        <p><strong>15+ Years Experience | 500+ Students Taught | 100+ Live Performances</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="container">
+    <h2>What My Students Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"Melanie completely transformed my approach to jazz singing. Her technical exercises expanded my range and unlocked new creative possibilities."</p>
+        <h4>Sarah K.</h4>
+        <small>Student for 2 years</small>
+      </div>
+      <div class="testimonial">
+        <p>"As a professional pianist transitioning to jazz vocals, Melanie's integrated approach to piano-vocal coordination was exactly what I needed."</p>
+        <h4>Marcus T.</h4>
+        <small>Student for 1.5 years</small>
+      </div>
+      <div class="testimonial">
+        <p>"I’ve worked with many vocal coaches, but Melanie’s ability to diagnose technical issues quickly and provide effective solutions sets her apart."</p>
+        <h4>Elena J.</h4>
+        <small>Student for 3 years</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="container">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="attached-image-1.jpg" alt="Gallery Image 1" />
+      <img src="attached-image-2.jpg" alt="Gallery Image 2" />
+    </div>
+  </section>
+
+  <!-- Membership Section -->
+  <section id="membership" class="container">
+    <h2>Membership &amp; Exclusive Access</h2>
+    <p>
+      Join our community to receive exclusive content, special offers, and early access to workshops and masterclasses.
+    </p>
+    <button class="btn" onclick="location.href='membership.html'">Become a Member</button>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container contact">
+    <h2>Get in Touch</h2>
+    <p>Studio in Kreuzberg, Berlin</p>
+    <p>Email: <a href="mailto:info@melanie-wainwright.de" style="color:#ff4081;">info@melanie-wainwright.de</a></p>
+    <p>Phone: +49 (0) 123 456789</p>
+    <p>Lessons available: Mon-Fri 10:00-20:00</p>
+    <form action="mailto:info@melanie-wainwright.de" method="post" enctype="text/plain">
+      <select name="service" required>
+        <option value="Private Lessons">Private Lessons</option>
+        <option value="Jazz Improvisation">Jazz Improvisation</option>
+        <option value="Performance Coaching">Performance Coaching</option>
+        <option value="Piano/Vocal Coordination">Piano/Vocal Coordination</option>
+      </select>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Melanie Wainwright Vocal Coaching. All rights reserved.</p>
+      <p>
+        <a href="#home">Home</a> |
+        <a href="#services">Services</a> |
+        <a href="#about">About</a> |
+        <a href="#testimonials">Testimonials</a> |
+        <a href="#gallery">Gallery</a> |
+        <a href="#membership">Membership</a> |
+        <a href="#contact">Contact</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    const menuToggle = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt - Mel Vocal Coaching</title>
+    <title>Über Mich - Mel Vocal Coaching</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -38,33 +38,24 @@
         .main-nav a:hover {
             color: #ffcc00;
         }
-        .contact-form {
-            max-width: 600px;
+        .about-section {
+            max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            background-color: rgba(30, 30, 30, 0.8);
+            background-color: #1e1e1e;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
-        input, textarea {
+        .about-section h1 {
+            color: #ffcc00;
+        }
+        .about-section img {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            height: auto;
+            border-radius: 10px;
         }
-        button {
-            background-color: #ffcc00;
-            color: #121212;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #e6b800;
+        footer {
+            margin-top: auto;
         }
     </style>
 </head>
@@ -72,23 +63,19 @@
     <nav class="main-nav">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="choir.html">Chor Nächste Tür</a></li>
+            <li><a href="services.html">Dienstleistungen</a></li>
+            <li><a href="about.html">Über Mich</a></li>
             <li><a href="contact.html">Kontakt</a></li>
         </ul>
     </nav>
 
-    <section class="contact-form">
-        <h1>Kontaktieren Sie uns</h1>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Ihr Name" required>
-            <label for="email">E-Mail:</label>
-            <input type="email" id="email" placeholder="Ihre E-Mail" required>
-            <label for="message">Nachricht:</label>
-            <textarea id="message" placeholder="Ihre Nachricht" required></textarea>
-            <button type="submit">Absenden</button>
-        </form>
+    <section class="about-section">
+        <h1>Über Mich</h1>
+        <img src="assets/your_picture.jpg" alt="Your Name">
+        <p>Mit über 15 Jahren Erfahrung im Jazzpiano und Gesang bringe ich sowohl technische Expertise als auch kreative Leidenschaft in jede Stunde ein.</p>
+        <p>Mein Weg in die Musik begann am Berklee College of Music, wo ich formale Ausbildung in Jazzgesang und Klavierperformance erhielt. Nach meinem Abschluss mit Auszeichnung habe ich umfangreiche Erfahrungen mit verschiedenen Jazzensembles in Europa und Nordamerika gesammelt.</p>
+        <p>Ich spezialisiere mich auf Jazzgesang und helfe meinen Schülern, die Feinheiten der Jazzharmonie zu navigieren. Mein Ansatz integriert Techniken aus dem klassischen Belcanto, um Vielseitigkeit und Stimmgesundheit zu gewährleisten.</p>
+        <a href="booking.html" class="button">Jetzt Buchen</a>
     </section>
 
     <footer>

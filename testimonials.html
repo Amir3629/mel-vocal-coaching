@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt - Mel Vocal Coaching</title>
+    <title>Testimonials - Mel Vocal Coaching</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -38,33 +38,30 @@
         .main-nav a:hover {
             color: #ffcc00;
         }
-        .contact-form {
-            max-width: 600px;
+        .testimonials-section {
+            max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            background-color: rgba(30, 30, 30, 0.8);
+            background-color: #1e1e1e;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        .testimonial-card {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
         }
-        button {
-            background-color: #ffcc00;
-            color: #121212;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .testimonial-card:hover {
+            transform: scale(1.05);
         }
-        button:hover {
-            background-color: #e6b800;
+        .testimonial-card h4 {
+            color: #ffcc00;
+            margin-top: 10px;
+        }
+        footer {
+            margin-top: auto;
         }
     </style>
 </head>
@@ -72,23 +69,28 @@
     <nav class="main-nav">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="choir.html">Chor Nächste Tür</a></li>
+            <li><a href="services.html">Dienstleistungen</a></li>
+            <li><a href="about.html">Über Mich</a></li>
             <li><a href="contact.html">Kontakt</a></li>
         </ul>
     </nav>
 
-    <section class="contact-form">
-        <h1>Kontaktieren Sie uns</h1>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Ihr Name" required>
-            <label for="email">E-Mail:</label>
-            <input type="email" id="email" placeholder="Ihre E-Mail" required>
-            <label for="message">Nachricht:</label>
-            <textarea id="message" placeholder="Ihre Nachricht" required></textarea>
-            <button type="submit">Absenden</button>
-        </form>
+    <section class="testimonials-section">
+        <h1>Was meine Schüler sagen</h1>
+        <div class="testimonial-card">
+            <p>"Melanie's coaching transformed my singing! I feel more confident and expressive than ever."</p>
+            <h4>- Anna Müller</h4>
+        </div>
+        <div class="testimonial-card">
+            <p>"The lessons are tailored to my needs, and I love the supportive environment!"</p>
+            <h4>- Lukas Schmidt</h4>
+        </div>
+        <div class="testimonial-card">
+            <p>"I never thought I could sing jazz, but Melanie made it possible!"</p>
+            <h4>- Sarah Becker</h4>
+        </div>
+        <!-- Add more testimonials as needed -->
+        <a href="booking.html" class="button">Jetzt Buchen</a>
     </section>
 
     <footer>

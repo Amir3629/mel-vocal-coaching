@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mel Vocal Coaching - Jazz Piano & Vocal Coach Berlin</title>
+    <title>Mel Vocal Coaching - Jazz Singing Lessons in Berlin</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -50,7 +50,18 @@
             position: relative;
             height: 100vh;
             overflow: hidden;
-            background: url('assets/photo_1_2025-02-27_12-05-55.jpg') no-repeat center center/cover;
+        }
+        .hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            filter: brightness(0.5);
         }
         .hero-content {
             position: absolute;
@@ -156,8 +167,13 @@
     </nav>
 
     <section class="hero">
+        <video autoplay muted loop>
+            <source src="https://www.example.com/path-to-your-jazz-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="hero-content">
             <h1>Mel Vocal Coaching</h1>
+            <p>Jazz Singing Lessons in Berlin</p>
             <a href="booking.html" class="cta-button">Jetzt Buchen</a>
         </div>
     </section>

@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anmelden - Mel Vocal Coaching</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background: url('assets/login-background.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background-color: #121212;
             color: #ffffff;
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -46,7 +47,7 @@
         input:focus {
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
-        .button {
+        button {
             background-color: #ffcc00;
             color: #121212;
             border: none;
@@ -55,28 +56,17 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        .button:hover {
+        button:hover {
             background-color: #e6b800;
-        }
-        .icon {
-            width: 20px;
-            margin-right: 10px;
         }
         footer {
             margin-top: auto;
-        }
-        input, textarea {
-            resize: none;
-        }
-        h2 {
-            color: #ffcc00;
         }
     </style>
 </head>
 <body>
     <div class="login-form">
         <h1><img src="assets/account-icon.png" alt="Account Icon" class="icon">Anmelden</h1>
-        <img src="assets/login-background.jpg" alt="Login Background" style="width:100%; height:auto;">
         <form id="loginForm">
             <label for="email">E-Mail:</label>
             <input type="email" id="email" placeholder="Ihre E-Mail" required>
@@ -86,6 +76,9 @@
             <p>Noch kein Konto? <a href="signup.html" style="color: #ffcc00;">Registrieren</a></p>
         </form>
     </div>
+    <footer>
+        <p>&copy; 2024 Melanie Wainwright Vocal Coaching. Alle Rechte vorbehalten.</p>
+    </footer>
     <script>
         window.onload = function() {
             const form = document.querySelector('.login-form');
