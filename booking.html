@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book a Lesson - Melanie Wainwright</title>
+    <title>Book a Lesson - Mel Vocal Coaching</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/booking.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href='https://unpkg.com/@fullcalendar/core/main.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #121212;
             color: #ffffff;
             font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
         }
         .main-nav {
             background-color: #1e1e1e;
@@ -31,11 +31,10 @@
         .main-nav a {
             color: #ffffff;
             text-decoration: none;
-            display: flex;
-            align-items: center;
+            transition: color 0.3s;
         }
-        .main-nav i {
-            margin-right: 5px;
+        .main-nav a:hover {
+            color: #ffcc00;
         }
         .booking-hero {
             text-align: center;
@@ -47,7 +46,7 @@
             margin: 20px 0;
         }
         .booking-card {
-            background-color: #1e1e1e;
+            background-color: #2a2a2a;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -75,7 +74,6 @@
     </style>
 </head>
 <body>
-    <!-- Main Navigation -->
     <nav class="main-nav">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -89,100 +87,56 @@
     </nav>
 
     <section class="booking-hero">
-        <h1>Book Your Lesson</h1>
-        <p>Choose from various options to enhance your musical skills.</p>
+        <h1>Jetzt Buchen</h1>
+        <p>Wählen Sie aus verschiedenen Optionen, um Ihre musikalischen Fähigkeiten zu verbessern.</p>
         <div class="booking-container">
             <div class="booking-options">
-                <div class="booking-card" data-aos="fade-up">
-                    <h3>Trial Lesson</h3>
+                <div class="booking-card">
+                    <h3>Probelektion</h3>
                     <div class="price">€40</div>
                     <ul>
-                        <li>45-minute session</li>
-                        <li>Skill assessment</li>
-                        <li>Goal setting</li>
-                        <li>Learning plan creation</li>
+                        <li>45-Minuten-Sitzung</li>
+                        <li>Fähigkeitsbewertung</li>
+                        <li>Zielsetzung</li>
+                        <li>Erstellung eines Lernplans</li>
                     </ul>
-                    <button class="submit-btn" data-type="trial">Book Trial</button>
+                    <button class="submit-btn" data-type="trial">Probe Buchen</button>
                 </div>
-                
-                <div class="booking-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Private Lesson</h3>
+                <div class="booking-card">
+                    <h3>Private Lektion</h3>
                     <div class="price">€60</div>
                     <ul>
-                        <li>60-minute session</li>
-                        <li>Personalized instruction</li>
-                        <li>Technique development</li>
-                        <li>Style coaching</li>
+                        <li>60-Minuten-Sitzung</li>
+                        <li>Personalisierte Anleitung</li>
+                        <li>Technikentwicklung</li>
+                        <li>Stilcoaching</li>
                     </ul>
-                    <button class="submit-btn" data-type="private">Book Private</button>
+                    <button class="submit-btn" data-type="private">Private Buchen</button>
                 </div>
-                
-                <div class="booking-card" data-aos="fade-up" data-aos-delay="400">
-                    <h3>Package (5 Lessons)</h3>
+                <div class="booking-card">
+                    <h3>Paket (5 Lektionen)</h3>
                     <div class="price">€275</div>
                     <ul>
-                        <li>Five 60-minute sessions</li>
-                        <li>Progress tracking</li>
-                        <li>Practice materials</li>
-                        <li>10% discount</li>
+                        <li>Fünf 60-Minuten-Sitzungen</li>
+                        <li>Fortschrittsverfolgung</li>
+                        <li>Übungsmaterialien</li>
+                        <li>10% Rabatt</li>
                     </ul>
-                    <button class="submit-btn" data-type="package">Book Package</button>
+                    <button class="submit-btn" data-type="package">Paket Buchen</button>
                 </div>
             </div>
-            
-            <form class="booking-form" id="bookingForm" data-aos="fade-up">
-                <h2>Complete Your Booking</h2>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <input type="date" id="bookingDate" placeholder="Preferred Date" required>
-                <button type="submit" class="submit-btn">Confirm Booking</button>
+            <form class="booking-form" id="bookingForm">
+                <h2>Vervollständigen Sie Ihre Buchung</h2>
+                <input type="text" placeholder="Ihr Name" required>
+                <input type="email" placeholder="Ihre E-Mail" required>
+                <input type="date" id="bookingDate" placeholder="Bevorzugtes Datum" required>
+                <button type="submit" class="submit-btn">Buchung Bestätigen</button>
             </form>
         </div>
     </section>
 
-    <div class="member-account">
-        <h2>Mitgliederbereich</h2>
-        <form id="member-form">
-            <input type="text" placeholder="Username" required>
-            <input type="email" placeholder="Ihre E-Mail" required>
-            <input type="password" placeholder="Passwort" required>
-            <button type="submit">Registrieren</button>
-        </form>
-    </div>
-
-    <div class="sign-up">
-        <h2>Mitgliedschaft Anmelden</h2>
-        <form id="sign-up-form">
-            <input type="email" placeholder="Ihre E-Mail" required>
-            <input type="password" placeholder="Passwort" required>
-            <button type="submit">Anmelden</button>
-        </form>
-    </div>
-
     <footer>
-        <div class="footer-bottom">
-            <div class="piano-footer">
-                <div class="keys-animation"></div>
-            </div>
-            <p>&copy; 2024 Melanie Wainwright Vocal Coaching. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 Melanie Wainwright Vocal Coaching. Alle Rechte vorbehalten.</p>
     </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/booking.js"></script>
-    <div id='calendar'></div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                dateClick: function(info) {
-                    document.getElementById('bookingDate').value = info.dateStr;
-                }
-            });
-            calendar.render();
-        });
-    </script>
 </body>
 </html>

@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melanie Wainwright - Jazz Piano & Vocal Coach Berlin</title>
+    <title>Mel Vocal Coaching - Jazz Piano & Vocal Coach Berlin</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #121212;
             color: #ffffff;
             font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
         }
         .main-nav {
             display: flex;
@@ -22,95 +24,70 @@
             background-color: #1e1e1e;
         }
         .main-nav h1 {
-            color: #ffffff;
+            color: #ffcc00;
             margin: 0;
         }
-        .book-now {
-            background-color: #ffcc00;
-            color: #121212;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
         }
-        .book-now:hover {
-            background-color: #e6b800;
+        .main-nav li {
+            margin-right: 20px;
+        }
+        .main-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .main-nav a:hover {
+            color: #ffcc00;
         }
         .hero {
             position: relative;
             height: 100vh;
             overflow: hidden;
-            background-color: #1e1e1e;
-        }
-        .video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2;
+            background: url('assets/hero-background.jpg') no-repeat center center/cover;
         }
         .hero-content {
-            position: relative;
-            z-index: 3;
-            color: #ffffff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            padding: 20px;
+            color: #ffffff;
         }
         .cta-button {
             background-color: #ffcc00;
             color: #121212;
             border: none;
             border-radius: 5px;
-            padding: 10px 20px;
+            padding: 15px 30px;
+            font-size: 1.2em;
             cursor: pointer;
             transition: background-color 0.3s;
         }
         .cta-button:hover {
             background-color: #e6b800;
         }
-        .music-player {
-            text-align: center;
+        .services, .about, .testimonials {
+            padding: 50px 20px;
+            background-color: #1e1e1e;
             margin: 20px 0;
-            color: #ffffff;
+            border-radius: 10px;
         }
-        .music-player audio {
-            width: 100%;
-            max-width: 600px;
-            background-color: #1e1e1e;
-            border-radius: 5px;
+        h2 {
+            color: #ffcc00;
+            margin-bottom: 20px;
         }
-        .services-detail, .teaching-philosophy, .success-stories, .upcoming-events {
-            background-color: #1e1e1e;
-            border-radius: 5px;
+        .service-card {
+            background-color: #2a2a2a;
             padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
         }
-        .service-package {
-            background-color: #1e1e1e;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-        .service-package h3 {
+        .service-card h3 {
             margin: 0;
-        }
-        .teaching-philosophy, .success-stories, .upcoming-events {
-            margin: 20px;
-            color: #ffffff;
-        }
-        .success-stories ul {
-            list-style-type: none;
-            padding: 0;
         }
     </style>
 </head>
@@ -118,377 +95,51 @@
 <body>
     <nav class="main-nav">
         <h1>Mel Vocal Coaching</h1>
-        <button class="book-now">Jetzt Buchen</button>
         <ul>
-            <li><a href="#services">Dienstleistungen</a></li>
-            <li><a href="#about">Über Uns</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="#contact">Contact</a></li>
             <li><a href="choir.html">Chor Nächste Tür</a></li>
         </ul>
     </nav>
 
     <section class="hero">
-        <div class="video-container">
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="https://player.vimeo.com/external/480164254.hd.mp4?s=b7a76586494030a23f2dc5c7ce46ebf0ce9a8b10&profile_id=175" type="video/mp4">
-            </video>
-            <div class="video-overlay"></div>
-        </div>
-        <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+        <div class="hero-content">
             <h1>Mel Vocal Coaching</h1>
             <a href="booking.html" class="cta-button">Jetzt Buchen</a>
         </div>
     </section>
 
-    <!-- Detailed Content Sections -->
+    <section id="services" class="services">
+        <h2>Unsere Dienstleistungen</h2>
+        <div class="service-card">
+            <h3>Private Gesangsstunden</h3>
+            <p>Personalisierte Einzelanweisungen, die auf Ihre einzigartige Stimme und Ziele zugeschnitten sind.</p>
+        </div>
+        <div class="service-card">
+            <h3>Jazz Improvisation</h3>
+            <p>Meistern Sie die Kunst des Jazz-Scattens und der melodischen Improvisation.</p>
+        </div>
+        <div class="service-card">
+            <h3>Aufführung Coaching</h3>
+            <p>Entwickeln Sie eine fesselnde Bühnenpräsenz und Aufführungskompetenz.</p>
+        </div>
+    </section>
+
     <section id="about" class="about">
         <h2>Über Mein Coaching</h2>
         <p>Mein Coaching konzentriert sich auf personalisiertes Gesangstraining, das Ihnen hilft, Ihre einzigartige Stimme zu entdecken und Ihre musikalischen Fähigkeiten zu verbessern.</p>
-        <h3>Kursziele</h3>
-        <p>Jeder Kurs ist darauf ausgelegt, Ihre Gesangstechnik, Aufführungskompetenzen und künstlerischen Ausdruck zu verbessern.</p>
-        <h3>Bevorstehende Workshops</h3>
-        <p>Bleiben Sie dran für unsere bevorstehenden Workshops und Veranstaltungen, die Ihr Gesangserlebnis verbessern werden!</p>
     </section>
 
-    <!-- Services Section (Enhanced) -->
-    <section id="services" class="services">
-        <h2 data-aos="fade-up">Meine Dienstleistungen</h2>
-        <div class="services-grid">
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="card-image">
-                    <img src="assets/photo_5_2025-02-23_22-12-02.jpg" alt="Private Lessons">
-                    <div class="price-tag">Ab €60/Stunde</div>
-                </div>
-                <div class="card-content">
-                    <h3>Private Gesangsstunden</h3>
-                    <p>Personalisierte Einzelanweisungen, die auf Ihre einzigartige Stimme und Ziele zugeschnitten sind.</p>
-                    <ul>
-                        <li>Atem- & Technikentwicklung</li>
-                        <li>Erweiterung des Stimmumfangs</li>
-                        <li>Stil & Interpretation</li>
-                        <li>Aufführungs Vorbereitung</li>
-                    </ul>
-                    <a href="booking.html?type=private" class="learn-more">Jetzt Buchen</a>
-                </div>
-            </div>
-            
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="card-image">
-                    <img src="assets/photo_4_2025-02-23_22-12-02.jpg" alt="Jazz Improvisation">
-                    <div class="price-tag">Ab €70/Stunde</div>
-                </div>
-                <div class="card-content">
-                    <h3>Jazz Improvisation</h3>
-                    <p>Meistern Sie die Kunst des Jazz-Scattens und der melodischen Improvisation.</p>
-                    <ul>
-                        <li>Scat-Vokabularaufbau</li>
-                        <li>Chord-Scale-Beziehungen</li>
-                        <li>Rhythmische Entwicklung</li>
-                        <li>Transkription & Analyse</li>
-                    </ul>
-                    <a href="booking.html?type=jazz" class="learn-more">Jetzt Buchen</a>
-                </div>
-            </div>
-            
-            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="card-image">
-                    <img src="assets/photo_2_2025-02-23_22-12-02.jpg" alt="Performance Coaching">
-                    <div class="price-tag">Ab €75/Stunde</div>
-                </div>
-                <div class="card-content">
-                    <h3>Aufführung Coaching</h3>
-                    <p>Entwickeln Sie eine fesselnde Bühnenpräsenz und Aufführungskompetenz.</p>
-                    <ul>
-                        <li>Microphone-Technik</li>
-                        <li>Bühnensbewegung & Präsenz</li>
-                        <li>Publikumsverbindung</li>
-                        <li>Umgang mit Auftrittsangst</li>
-                    </ul>
-                    <a href="booking.html?type=performance" class="learn-more">Jetzt Buchen</a>
-                </div>
-            </div>
-            
-            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="card-image">
-                    <img src="assets/photo_1_2025-02-23_22-12-02.jpg" alt="Piano/Vocal Coordination">
-                    <div class="price-tag">Ab €80/Stunde</div>
-                </div>
-                <div class="card-content">
-                    <h3>Piano/Vocal-Koordination</h3>
-                    <p>Erlernen Sie, sich beim Singen mit Stil und Selbstvertrauen zu begleiten.</p>
-                    <ul>
-                        <li>Grundlegende Klaviertechnik</li>
-                        <li>Vokale Unabhängigkeit</li>
-                        <li>Jazz-Akkorde & Begleitung</li>
-                        <li>Arrangementsfähigkeiten</li>
-                    </ul>
-                    <a href="booking.html?type=piano-vocal" class="learn-more">Jetzt Buchen</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section (Enhanced) -->
-    <section id="about" class="about">
-        <div class="about-content">
-            <div class="about-text" data-aos="fade-right">
-                <h2>About Me</h2>
-                <p class="bio-intro">With over 15 years of experience in jazz piano and vocals, I bring both technical expertise and creative passion to every lesson.</p>
-                
-                <p>My journey in music began at the Berklee College of Music, where I received formal training in jazz voice and piano performance. After graduating with honors, I toured extensively with various jazz ensembles throughout Europe and North America, performing at renowned venues including the Blue Note in New York and Ronnie Scott's in London.</p>
-                
-                <p>My teaching philosophy blends rigorous technical development with creative exploration. I believe that a strong foundation in breath support, vocal placement, and articulation is essential, but equally important is developing each student's unique artistic voice. Whether you're a beginner finding your sound or an experienced performer refining your craft, I create a supportive environment where you can take risks and grow.</p>
-                
-                <p>Specializing in jazz vocals, I help students navigate the complexities of swing phrasing, improvisation, and the subtleties of jazz harmony. My approach integrates techniques from classical bel canto to contemporary vocal methods, ensuring versatility and vocal longevity.</p>
-                
-                <div class="experience-highlights">
-                    <div class="highlight" data-aos="zoom-in" data-aos-delay="100">
-                        <span class="number">15+</span>
-                        <span class="label">Years Experience</span>
-                    </div>
-                    <div class="highlight" data-aos="zoom-in" data-aos-delay="200">
-                        <span class="number">500+</span>
-                        <span class="label">Students Taught</span>
-                    </div>
-                    <div class="highlight" data-aos="zoom-in" data-aos-delay="300">
-                        <span class="number">100+</span>
-                        <span class="label">Live Performances</span>
-                    </div>
-                </div>
-            </div>
-            <div class="about-image" data-aos="fade-left">
-                <img src="assets/photo_3_2025-02-23_22-12-02.jpg" alt="Melanie Wainwright">
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
-        <h2 data-aos="fade-up">What My Students Say</h2>
-        <div class="testimonials-container">
-            <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
-                <div class="quote">
-                    <i class="fas fa-quote-left"></i>
-                    <p>Melanie completely transformed my approach to jazz singing. Her technical exercises expanded my range by nearly an octave, and her improvisation methods helped me find freedom in my scatting that I never thought possible.</p>
-                    <div class="student-info">
-                        <img src="assets/photo_1_2025-02-23_22-12-02.jpg" alt="Sarah K.">
-                        <div>
-                            <h4>Sarah K.</h4>
-                            <p>Student for 2 years</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
-                <div class="quote">
-                    <i class="fas fa-quote-left"></i>
-                    <p>As a professional pianist transitioning to jazz vocals, I was looking for someone who understood both worlds. Melanie's integrated approach to piano-vocal coordination was exactly what I needed to bring authenticity to my performances.</p>
-                    <div class="student-info">
-                        <img src="assets/photo_2_2025-02-23_22-12-02.jpg" alt="Marcus T.">
-                        <div>
-                            <h4>Marcus T.</h4>
-                            <p>Student for 1.5 years</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial" data-aos="fade-up" data-aos-delay="300">
-                <div class="quote">
-                    <i class="fas fa-quote-left"></i>
-                    <p>I've worked with many vocal coaches, but Melanie stands out for her ability to diagnose technical issues quickly and provide effective solutions. Her deep knowledge of jazz history and theory contextualizes everything we work on.</p>
-                    <div class="student-info">
-                        <img src="assets/photo_3_2025-02-23_22-12-02.jpg" alt="Elena J.">
-                        <div>
-                            <h4>Elena J.</h4>
-                            <p>Student for 3 years</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section (Enhanced) -->
-    <section id="contact" class="contact">
-        <div class="contact-background">
-            <div class="contact-overlay"></div>
-        </div>
-        <div class="contact-content">
-            <div class="contact-info" data-aos="fade-right">
-                <h2>Get in Touch</h2>
-                <div class="contact-details">
-                    <div class="detail">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Studio in Kreuzberg, Berlin</p>
-                    </div>
-                    <div class="detail">
-                        <i class="fas fa-envelope"></i>
-                        <p>info@melanie-wainwright.de</p>
-                    </div>
-                    <div class="detail">
-                        <i class="fas fa-phone"></i>
-                        <p>+49 (0) 123 456789</p>
-                    </div>
-                    <div class="detail">
-                        <i class="fas fa-clock"></i>
-                        <p>Lessons available: Mon-Fri 10:00-20:00</p>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-spotify"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-soundcloud"></i></a>
-                </div>
-            </div>
-            <form class="contact-form" data-aos="fade-left">
-                <h3>Send a Message</h3>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <select required>
-                    <option value="">Select Service</option>
-                    <option value="private">Private Lessons</option>
-                    <option value="jazz">Jazz Improvisation</option>
-                    <option value="performance">Performance Coaching</option>
-                    <option value="piano-vocal">Piano/Vocal Coordination</option>
-                </select>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Add this section where you want the video to appear -->
-    <section id="preview-video" class="video-preview">
-        <div class="container">
-            <h2 data-aos="fade-up">Preview My Lessons</h2>
-            <div class="video-container" data-aos="zoom-in">
-                <iframe width="560" height="315" 
-                    src="https://www.youtube.com/embed/PLACEHOLDER_ID" 
-                    title="Vocal Coaching Preview" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <p class="video-description" data-aos="fade-up">
-                Get a glimpse of my teaching style and approach in this short preview. 
-                Learn how I work with students to develop their unique voice and musical expression.
-            </p>
-        </div>
-    </section>
-
-    <section class="music-player">
-        <h2>Listen to Our Jazz Tracks</h2>
-        <audio controls>
-            <source src="path/to/your/jazz-track.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </section>
-
-    <section class="services-detail">
-        <h2>Our Services</h2>
-        <div class="service-package">
-            <h3>Private Lessons</h3>
-            <p>Personalized one-on-one instruction tailored to your unique voice and goals.</p>
-            <ul>
-                <li>Breathing & Technique Development</li>
-                <li>Vocal Range Expansion</li>
-                <li>Style & Interpretation</li>
-                <li>Performance Preparation</li>
-            </ul>
-        </div>
-        <div class="service-package">
-            <h3>Jazz Improvisation Training</h3>
-            <p>Master the art of jazz scatting and melodic improvisation.</p>
-            <ul>
-                <li>Scat Vocabulary Building</li>
-                <li>Chord-Scale Relationships</li>
-                <li>Rhythmic Development</li>
-                <li>Transcription & Analysis</li>
-            </ul>
-        </div>
-        <div class="service-package">
-            <h3>Stage Performance Coaching</h3>
-            <p>Develop captivating stage presence and performance confidence.</p>
-            <ul>
-                <li>Microphone Technique</li>
-                <li>Stage Movement & Presence</li>
-                <li>Audience Connection</li>
-                <li>Performance Anxiety Management</li>
-            </ul>
-        </div>
-        <div class="service-package">
-            <h3>Workshops & Masterclasses</h3>
-            <p>Engage in group sessions focusing on specific techniques and peer learning.</p>
-        </div>
-        <div class="service-package">
-            <h3>Audition Preparation</h3>
-            <p>Get ready for your auditions with tailored coaching and feedback.</p>
-        </div>
-    </section>
-
-    <section class="teaching-philosophy">
-        <h2>Teaching Philosophy</h2>
-        <p>My teaching philosophy blends rigorous technical development with creative exploration. I believe that a strong foundation in breath support, vocal placement, and articulation is essential, but equally important is developing each student's unique artistic voice.</p>
-    </section>
-
-    <section class="success-stories">
-        <h2>Success Stories</h2>
-        <p>Hear from my students about their journeys and achievements through vocal coaching.</p>
-        <ul>
-            <li>Sarah K.: "Melanie completely transformed my approach to jazz singing. Her technical exercises expanded my range by nearly an octave!"</li>
-            <li>Marcus T.: "As a professional pianist transitioning to jazz vocals, Melanie's integrated approach was exactly what I needed!"</li>
-            <li>Elena J.: "I've worked with many vocal coaches, but Melanie stands out for her ability to diagnose technical issues quickly!"</li>
-        </ul>
-    </section>
-
-    <section class="upcoming-events">
-        <h2>Upcoming Events</h2>
-        <p>Stay tuned for our upcoming workshops and events that will elevate your singing experience!</p>
+        <h2>Was meine Schüler sagen</h2>
+        <p>Hören Sie von meinen Schülern über ihre Reisen und Erfolge durch das Gesangstraining.</p>
     </section>
 
     <footer>
-        <div class="footer-top">
-            <div class="footer-col">
-                <h3>Melanie Wainwright</h3>
-                <p>Elevating vocal artistry through personalized jazz coaching and performance training in the heart of Berlin.</p>
-            </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Latest Blog Posts</h3>
-                <div class="blog-preview">
-                    <a href="#">The Art of Scatting: Beyond Syllables</a>
-                    <span>May 12, 2023</span>
-                </div>
-                <div class="blog-preview">
-                    <a href="#">Vocal Health for Jazz Singers</a>
-                    <span>April 28, 2023</span>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="piano-footer">
-                <!-- Piano keys animation -->
-                <div class="keys-animation"></div>
-            </div>
-            <p>&copy; 2024 Melanie Wainwright Vocal Coaching. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 Melanie Wainwright Vocal Coaching. Alle Rechte vorbehalten.</p>
     </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
 </body>
 </html>
