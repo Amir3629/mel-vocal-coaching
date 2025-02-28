@@ -103,5 +103,13 @@
     <footer>
         <p>&copy; 2024 Melanie Wainwright Vocal Coaching. Alle Rechte vorbehalten.</p>
     </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            alert('Thank you for your booking! We will contact you soon.');
+            // Here you can add code to actually submit the form data if needed
+        });
+    </script>
 </body>
 </html>

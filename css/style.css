@@ -23,6 +23,9 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
+    background: url('path/to/your/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    scroll-behavior: smooth;
 }
 
 .hero {
@@ -116,6 +119,10 @@ body {
     z-index: 100;
     padding: 1.2rem 0;
     transition: var(--transition-smooth);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .main-nav ul {
@@ -1001,4 +1008,12 @@ footer {
     margin: 2rem auto 0;
     font-size: 1.1rem;
     opacity: 0.9;
+}
+
+button {
+    background-color: #8B4513; /* Change to a calming brown */
+}
+
+.service-package:hover {
+    background-color: #8B4513; /* Change to a calming brown on hover */
 } 
