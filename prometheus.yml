@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'your_application'
+    static_configs:
+      - targets: ['localhost:3000']  # Adjust this to your application's address
