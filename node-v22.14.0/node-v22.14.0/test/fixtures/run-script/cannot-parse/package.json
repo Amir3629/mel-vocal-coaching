@@ -1,0 +1,5 @@
+{
+  "name": "cannot-parse",
+  "version": "1.0.0",
+  "description": "This package is for testing parsing errors."
+}
