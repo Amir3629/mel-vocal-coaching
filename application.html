@@ -11,6 +11,9 @@
             color: #ffffff;
             font-family: 'Roboto', sans-serif;
             scroll-behavior: smooth;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         .main-nav {
             background-color: #1e1e1e;
@@ -45,6 +48,7 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             transition: box-shadow 0.3s;
+            resize: none;
         }
         input:focus, textarea:focus {
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -60,6 +64,9 @@
         }
         button:hover {
             background-color: #e6b800;
+        }
+        footer {
+            margin-top: auto;
         }
     </style>
 </head>
