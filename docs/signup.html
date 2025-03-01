@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrieren - Mel Vocal Coaching</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-nav {
+            background-color: #1e1e1e;
+            padding: 10px;
+        }
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        .main-nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .main-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .main-nav a:hover {
+            color: #ffcc00;
+        }
+        .signup-form {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(30, 30, 30, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        button {
+            background-color: #ffcc00;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #e6b800;
+        }
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="choir.html">Chor Nächste Tür</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <section class="signup-form">
+        <h1>Registrieren</h1>
+        <img src="assets/photo_6_2025-02-27_12-05-55.jpg" alt="Registrieren" style="width:100%; height:auto; border-radius:10px; margin-bottom: 20px;">
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Ihr Name" required>
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" placeholder="Ihre E-Mail" required>
+            <label for="password">Passwort:</label>
+            <input type="password" id="password" placeholder="Ihr Passwort" required>
+            <button type="submit">Registrieren</button>
+            <p>Bereits ein Konto? <a href="login.html" style="color: #ffcc00;">Anmelden</a></p>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Melanie Wainwright Vocal Coaching. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html> 

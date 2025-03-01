@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dienstleistungen - Mel Vocal Coaching</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-nav {
+            background-color: #1e1e1e;
+            padding: 10px;
+        }
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        .main-nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .main-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .main-nav a:hover {
+            color: #ffcc00;
+        }
+        .services-detail {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .service-package {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+        .service-package:hover {
+            transform: scale(1.05);
+        }
+        .service-package h2 {
+            margin: 0;
+            color: #ffcc00;
+        }
+        .service-package p {
+            margin: 5px 0;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #1e1e1e;
+        }
+        input, textarea {
+            resize: none;
+        }
+        .button {
+            background-color: #ffcc00;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #e6b800;
+        }
+        h2 {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Dienstleistungen</a></li>
+            <li><a href="about.html">Über Uns</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <section class="services-detail">
+        <h1>Vocal Coaching Dienstleistungen</h1>
+        <div class="service-package">
+            <h2>Private Gesangsstunden</h2>
+            <div class="price">Ab €60/Stunde</div>
+            <p>Personalisierte Einzelanweisungen, die auf Ihre einzigartige Stimme und Ziele zugeschnitten sind.</p>
+            <ul>
+                <li>Technikentwicklung</li>
+                <li>Stil- und Repertoire-Coaching</li>
+                <li>Aufführungs Vorbereitung</li>
+            </ul>
+            <a href="booking.html?service=private" class="button">Jetzt Buchen</a>
+        </div>
+
+        <div class="service-package">
+            <h2>Gruppenworkshops</h2>
+            <div class="price">Ab €30/Person</div>
+            <p>Kleine Gruppensitzungen (4-8 Personen) mit Fokus auf spezifische Techniken.</p>
+            <ul>
+                <li>Peer-Lernumgebung</li>
+                <li>Monatliche Themen</li>
+            </ul>
+            <a href="booking.html?service=workshop" class="button">Jetzt Buchen</a>
+        </div>
+
+        <div class="service-package">
+            <h2>Aufführung Coaching</h2>
+            <div class="price">Ab €75/Stunde</div>
+            <p>Entwicklung der Bühnenpräsenz und Technik mit dem Mikrofon.</p>
+            <ul>
+                <li>Strategien zur Publikumsbindung</li>
+                <li>Umgang mit Auftrittsangst</li>
+            </ul>
+            <a href="booking.html?service=performance" class="button">Jetzt Buchen</a>
+        </div>
+
+        <div class="service-package">
+            <h2>Piano/Vocal-Koordination</h2>
+            <div class="price">Ab €80/Stunde</div>
+            <p>Erlernen Sie, sich beim Singen zu begleiten und grundlegende Klaviertechnik.</p>
+            <ul>
+                <li>Vokale Unabhängigkeit</li>
+                <li>Jazz-Akkorde & Begleitung</li>
+            </ul>
+            <a href="booking.html?service=piano-vocal" class="button">Jetzt Buchen</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Melanie Wainwright Vocal Coaching. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html> 

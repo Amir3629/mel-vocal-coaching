@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professionelles Jazz Vocal Coaching in Berlin - Entdecken Sie Ihre Stimme mit Melanie Wainwright">
+    <title>Melvo Vocal Coaching</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/enhanced-features.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.css" rel="stylesheet">
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-storage.js"></script>
+    
+    <!-- Third-party Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/opensheetmusicdisplay@1.7.1/build/opensheetmusicdisplay.min.js"></script>
+    
+    <!-- Main Scripts -->
+    <script src="js/main.js" defer></script>
+    <script src="js/enhanced-features.js" defer></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #1e1e1e;
+        }
+        .main-nav h1 {
+            color: #ffcc00;
+            margin: 0;
+        }
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        .main-nav li {
+            margin-right: 20px;
+        }
+        .main-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .main-nav a:hover {
+            color: #ffcc00;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background: url('https://www.example.com/path-to-your-jazz-background.jpg') no-repeat center center/cover;
+        }
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #ffffff;
+        }
+        .cta-button {
+            background-color: #ffcc00;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #e6b800;
+        }
+        .services, .about, .testimonials {
+            padding: 50px 20px;
+            background-color: #1e1e1e;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        h2 {
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+        .service-card {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .service-card h3 {
+            margin: 0;
+        }
+        .testimonial-carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+        .testimonial-card {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            flex: 0 0 300px;
+            transition: transform 0.3s;
+        }
+        .testimonial-card h4 {
+            margin-top: 10px;
+            color: #ffcc00;
+        }
+        @media (max-width: 768px) {
+            .testimonial-card {
+                flex: 0 0 100%;
+            }
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #1e1e1e;
+        }
+        input, textarea {
+            resize: none;
+        }
+        .button {
+            background-color: #ffcc00;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #e6b800;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="loading-animation">
+            <div class="loading-bar"></div>
+            <div class="loading-bar"></div>
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">Melvo Vocal Coaching</a>
+            <ul>
+                <li><a href="#about"><i class="fas fa-user"></i> Über mich</a></li>
+                <li><a href="#services"><i class="fas fa-music"></i> Leistungen</a></li>
+                <li><a href="#lesson-booking"><i class="fas fa-calendar"></i> Termine</a></li>
+                <li><a href="#progress-tracking"><i class="fas fa-chart-line"></i> Fortschritt</a></li>
+                <li><a href="#recording-studio"><i class="fas fa-microphone"></i> Studio</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Auth Container -->
+    <div id="authContainer"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Entdecke deine Stimme</h1>
+            <p class="subtitle">Professionelles Gesangstraining für alle Levels</p>
+            <div class="cta-buttons">
+                <a href="#lesson-booking" class="button primary-button">Jetzt Termin buchen</a>
+                <a href="#about" class="button secondary-button">Mehr erfahren</a>
+            </div>
+        </div>
+    </section>
+
+    <main id="mainContent">
+        <section id="about" class="fade-in">
+            <h2>Über mich</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="assets/profile.jpg" alt="Gesangslehrer" class="profile-image">
+                </div>
+                <div class="about-text">
+                    <p>Willkommen bei Melvo Vocal Coaching! Mit jahrelanger Erfahrung und Leidenschaft für Musik helfe ich dir dabei, dein stimmliches Potenzial voll zu entfalten.</p>
+                    <div class="credentials">
+                        <div class="credential">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Ausgebildeter Gesangspädagoge</span>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-award"></i>
+                            <span>10+ Jahre Erfahrung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="fade-in">
+            <h2>Leistungen</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fas fa-microphone-alt"></i>
+                    <h3>Einzelunterricht</h3>
+                    <ul>
+                        <li>Individuelle Betreuung</li>
+                        <li>Stimmbildung</li>
+                        <li>Atemtechnik</li>
+                        <li>Repertoire-Aufbau</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Gruppenunterricht</h3>
+                    <ul>
+                        <li>Chorgesang</li>
+                        <li>Ensemble-Training</li>
+                        <li>Harmoniebildung</li>
+                        <li>Gemeinsames Lernen</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-compact-disc"></i>
+                    <h3>Studioaufnahmen</h3>
+                    <ul>
+                        <li>Professionelle Aufnahmen</li>
+                        <li>Mix und Mastering</li>
+                        <li>Demo-Produktion</li>
+                        <li>Portfolio-Erstellung</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="fade-in">
+            <h2>Kontakt</h2>
+            <div class="contact-container">
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="E-Mail" required>
+                    <textarea name="message" placeholder="Nachricht" required></textarea>
+                    <button type="submit">Nachricht senden</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Musterstraße 123, 12345 Stadt</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+49 123 456789</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@melvo-coaching.de</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Melvo Vocal Coaching</h3>
+                <p>Professionelles Gesangstraining für alle Levels</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#about">Über mich</a></li>
+                    <li><a href="#services">Leistungen</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Social Media</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Melvo Vocal Coaching. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <!-- Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/tone"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pitchy"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vexflow"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wavesurfer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/recordrtc"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ml5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+
+    <!-- Application Scripts -->
+    <script type="module" src="js/modules/Auth.js"></script>
+    <script type="module" src="js/modules/PitchDetection.js"></script>
+    <script type="module" src="js/modules/VirtualPiano.js"></script>
+    <script type="module" src="js/modules/LessonBooking.js"></script>
+    <script type="module" src="js/modules/ProgressTracker.js"></script>
+    <script type="module" src="js/modules/SheetMusicViewer.js"></script>
+    <script type="module" src="js/modules/PerformanceRecorder.js"></script>
+    <script type="module" src="js/App.js"></script>
+    <script type="module">
+        import { App } from './js/App.js';
+        
+        // Initialize the application when the DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const app = new App();
+            app.initialize();
+        });
+    </script>
+</body>
+</html>

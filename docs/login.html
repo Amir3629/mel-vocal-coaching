@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmelden - Mel Vocal Coaching</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .login-form {
+            background-color: rgba(30, 30, 30, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .login-form h1 {
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s;
+        }
+        input:focus {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        button {
+            background-color: #ffcc00;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #e6b800;
+        }
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-form">
+        <h1><img src="assets/account-icon.png" alt="Account Icon" class="icon">Anmelden</h1>
+        <form id="loginForm">
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" placeholder="Ihre E-Mail" required>
+            <label for="password">Passwort:</label>
+            <input type="password" id="password" placeholder="Ihr Passwort" required>
+            <button type="submit">Anmelden</button>
+            <p>Noch kein Konto? <a href="signup.html" style="color: #ffcc00;">Registrieren</a></p>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Melanie Wainwright Vocal Coaching. Alle Rechte vorbehalten.</p>
+    </footer>
+    <script>
+        window.onload = function() {
+            const form = document.querySelector('.login-form');
+            form.style.opacity = 0;
+            setTimeout(() => {
+                form.style.transform = 'translateY(0)';
+                form.style.opacity = 1;
+            }, 300);
+        };
+    </script>
+</body>
+</html> 

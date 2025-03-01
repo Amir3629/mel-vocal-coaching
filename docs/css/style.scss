@@ -1,0 +1,38 @@
+// Example SCSS content
+$primary-color: #ffcc00;
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-nav {
+    background-color: #1e1e1e;
+    padding: 10px;
+}
+
+button {
+    background-color: $primary-color;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: darken($primary-color, 10%);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+// Add more styles as needed 
