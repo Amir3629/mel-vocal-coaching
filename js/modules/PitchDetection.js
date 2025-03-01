@@ -1,5 +1,5 @@
 import * as Pitchy from 'pitchy';
-import { Tone } from 'tone';
+import * as Tone from 'tone';
 
 export class PitchDetection {
     constructor() {
@@ -8,6 +8,7 @@ export class PitchDetection {
         this.detector = null;
         this.isListening = false;
         this.onPitchCallback = null;
+        this.synth = new Tone.Synth().toDestination();
     }
 
     async initialize() {
@@ -58,9 +59,9 @@ export class PitchDetection {
         return `${noteNames[noteIndex]}${octave}`;
     }
 
-    playReferenceNote(note, duration = 1) {
-        const synth = new Tone.Synth().toDestination();
-        synth.triggerAttackRelease(note, duration);
+    async playReferenceNote(note, duration = 1) {
+        await Tone.start();
+        this.synth.triggerAttackRelease(note, duration);
     }
 
     getAccuracyScore(targetNote, detectedNote) {

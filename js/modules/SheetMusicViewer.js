@@ -1,5 +1,5 @@
-import { Vex } from 'vexflow';
-import { Tone } from 'tone';
+import * as Tone from 'tone';
+import * as Vex from 'vexflow';
 
 export class SheetMusicViewer {
     constructor() {
@@ -167,14 +167,8 @@ export class SheetMusicViewer {
     }
 
     async playNote(note) {
-        return new Promise(resolve => {
-            const duration = this.calculateNoteDuration(note.duration);
-            this.synth.triggerAttackRelease(
-                this.convertKeyToFrequency(note.key),
-                duration * this.playbackSpeed
-            );
-            setTimeout(resolve, duration * 1000 * this.playbackSpeed);
-        });
+        await Tone.start();
+        this.synth.triggerAttackRelease(note.key, note.duration);
     }
 
     calculateNoteDuration(duration) {

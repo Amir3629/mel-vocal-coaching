@@ -1,12 +1,12 @@
-import { Tone } from 'tone';
+import * as Tone from 'tone';
 
 export class VirtualPiano {
     constructor() {
         this.synth = new Tone.PolySynth(Tone.Synth).toDestination();
         this.keys = [];
         this.isRecording = false;
-        this.recordedNotes = [];
-        this.recordStartTime = null;
+        this.recording = [];
+        this.recordingStartTime = null;
     }
 
     initialize(container) {
@@ -41,8 +41,8 @@ export class VirtualPiano {
         if (key) key.classList.add('active');
 
         if (this.isRecording) {
-            const time = Date.now() - this.recordStartTime;
-            this.recordedNotes.push({ note, time, type: 'start' });
+            const time = Date.now() - this.recordingStartTime;
+            this.recording.push({ note, time, type: 'start' });
         }
     }
 
@@ -52,8 +52,8 @@ export class VirtualPiano {
         if (key) key.classList.remove('active');
 
         if (this.isRecording) {
-            const time = Date.now() - this.recordStartTime;
-            this.recordedNotes.push({ note, time, type: 'stop' });
+            const time = Date.now() - this.recordingStartTime;
+            this.recording.push({ note, time, type: 'stop' });
         }
     }
 
@@ -80,13 +80,13 @@ export class VirtualPiano {
 
     startRecording() {
         this.isRecording = true;
-        this.recordedNotes = [];
-        this.recordStartTime = Date.now();
+        this.recording = [];
+        this.recordingStartTime = Date.now();
     }
 
     stopRecording() {
         this.isRecording = false;
-        return this.recordedNotes;
+        return this.recording;
     }
 
     playRecording(recording) {

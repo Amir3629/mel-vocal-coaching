@@ -1,11 +1,17 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import { initializeApp } from 'firebase/app';
+import { 
+    getAuth, 
+    signInWithEmailAndPassword, 
+    createUserWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged 
+} from 'firebase/auth';
 import 'firebase/firestore';
 import Swal from 'sweetalert2';
 
 export class Auth {
     constructor(firebaseApp) {
-        this.auth = firebaseApp.auth();
+        this.auth = getAuth(firebaseApp);
         this.db = firebaseApp.firestore();
         this.currentUser = null;
         this.onAuthStateChangedCallback = null;
@@ -56,7 +62,7 @@ export class Auth {
     }
 
     setupAuthStateChanged() {
-        this.auth.onAuthStateChanged(user => {
+        onAuthStateChanged(this.auth, user => {
             this.currentUser = user;
             this.updateUI();
             if (this.onAuthStateChangedCallback) {
@@ -224,7 +230,7 @@ export class Auth {
 
     async login(email, password) {
         try {
-            await this.auth.signInWithEmailAndPassword(email, password);
+            await signInWithEmailAndPassword(this.auth, email, password);
         } catch (error) {
             console.error('Login error:', error);
             throw error;
@@ -233,7 +239,7 @@ export class Auth {
 
     async register(email, password, displayName) {
         try {
-            const credential = await this.auth.createUserWithEmailAndPassword(email, password);
+            const credential = await createUserWithEmailAndPassword(this.auth, email, password);
             
             await this.db.collection('users').doc(credential.user.uid).set({
                 displayName,
@@ -279,7 +285,7 @@ export class Auth {
 
     async logout() {
         try {
-            await this.auth.signOut();
+            await signOut(this.auth);
             await Swal.fire(
                 'Success!',
                 'You have been logged out successfully.',

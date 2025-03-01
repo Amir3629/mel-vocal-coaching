@@ -1,21 +1,56 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './js/index.js', // Entry point for your application
-    output: {
-        filename: 'bundle.js', // Output bundle file
-        path: path.resolve(__dirname, 'build'), // Output directory
+    entry: {
+        main: './js/App.js',
+        enhanced: './js/modules/EnhancedFeatures.js'
     },
-    mode: 'development', // Set the mode to development
+    output: {
+        path: path.resolve(__dirname, 'docs'),
+        filename: 'js/[name].[contenthash].js',
+        clean: true
+    },
     module: {
         rules: [
             {
-                test: /\.js$/, // Apply this rule to .js files
+                test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader', // Use Babel to transpile JavaScript
-                },
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             },
-        ],
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            }
+        ]
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './index.html',
+            filename: 'index.html',
+            inject: 'body'
+        })
+    ],
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'docs')
+        },
+        compress: true,
+        port: 9000,
+        hot: true
+    }
 }; 
