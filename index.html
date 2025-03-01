@@ -50,18 +50,7 @@
             position: relative;
             height: 100vh;
             overflow: hidden;
-        }
-        .hero video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            transform: translate(-50%, -50%);
-            filter: brightness(0.5);
+            background: url('https://www.example.com/path-to-your-jazz-background.jpg') no-repeat center center/cover;
         }
         .hero-content {
             position: absolute;
@@ -102,13 +91,6 @@
         }
         .service-card h3 {
             margin: 0;
-        }
-        .testimonials {
-            padding: 50px 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            margin: 20px 0;
-            position: relative;
         }
         .testimonial-carousel {
             display: flex;
@@ -170,10 +152,6 @@
     </nav>
 
     <section class="hero">
-        <video autoplay muted loop>
-            <source src="https://www.example.com/path-to-your-jazz-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
         <div class="hero-content">
             <h1>Mel Vocal Coaching</h1>
             <p>Jazz Singing Lessons in Berlin</p>
@@ -220,7 +198,6 @@
                 <p>"I never thought I could sing jazz, but Melanie made it possible!"</p>
                 <h4>- Sarah Becker</h4>
             </div>
-            <!-- Add more testimonials as needed -->
         </div>
     </section>
 
