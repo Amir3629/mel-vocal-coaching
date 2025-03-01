@@ -1,0 +1,260 @@
+/* Enhanced Features Styles */
+
+/* Virtual Piano */
+.virtual-piano-container {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin: 20px 0;
+    overflow-x: auto;
+}
+
+.piano-key {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.1s;
+    user-select: none;
+}
+
+.piano-key:active,
+.piano-key.active {
+    background-color: #ffcc00;
+    transform: translateY(2px);
+}
+
+/* Lesson Booking */
+#lesson-booking {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.booking-calendar {
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day {
+    padding: 10px;
+    text-align: center;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calendar-day:hover {
+    background: #444;
+}
+
+.calendar-day.available {
+    border: 1px solid #ffcc00;
+}
+
+/* Progress Tracking */
+#progress-tracking {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.progress-charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.practice-log {
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#practice-log-form {
+    display: grid;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Sheet Music */
+#sheet-music {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.sheet-music-viewer {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.score-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    min-height: 400px;
+}
+
+/* Recording Studio */
+#recording-studio {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.recording-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.visualizer {
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 200px;
+    position: relative;
+}
+
+#audio-visualizer {
+    width: 100%;
+    height: 100%;
+}
+
+.recordings-list {
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.recordings-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recordings-list li {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.recordings-list li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .virtual-piano-container {
+        padding: 10px;
+    }
+
+    .progress-charts {
+        grid-template-columns: 1fr;
+    }
+
+    .recording-controls {
+        flex-direction: column;
+    }
+
+    .recording-controls button {
+        width: 100%;
+    }
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.recording .visualizer {
+    animation: pulse 2s infinite;
+}
+
+/* Common Elements */
+button {
+    background: #ffcc00;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background: #e6b800;
+}
+
+button:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+input[type="date"]:focus,
+input[type="time"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffcc00;
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.7;
+}
+
+.loading::after {
+    content: "Loading...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffcc00;
+} 
